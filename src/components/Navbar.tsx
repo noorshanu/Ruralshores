@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 
 interface MenuItem {
   label: string
@@ -21,12 +22,14 @@ const menuItems: MenuItem[] = [
   },
   { 
     label: 'Services', 
-    dropdown: [
+    href: '/services'
+  },
+
+    
       { label: 'Corporate', href: '/services/corporate' },
       { label: 'Employability', href: '/services/employability' },
-      { label: 'Content', href: '/services/content' }
-    ]
-  },
+      { label: 'Content', href: '/services/content' },
+  
   { 
     label: 'Insights', 
     dropdown: [
@@ -53,23 +56,53 @@ const Navbar: React.FC = () => {
     <>
       {/* Desktop Navbar */}
       <nav className="hidden lg:block sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+        <div className=" mx-auto px-4 pb-2 pt-2 sm:px-12">
+        {/* <div  className="flex justify-center flex-col items-center ">
+                          <div className="font-normal text-lg text-black mb-2">
+                            Services
+                          </div>
+               
+                          <svg width="300" height="30" viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                              <filter id="shadow" x="-10%" y="-10%" width="140%" height="140%">
+                                <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#000"/>
+                              </filter>
+                            </defs>
+                            <path 
+                              d="M10 30 Q 10 10 30 10 L 270 10 Q 290 10 290 30" 
+                              stroke="#f1f1f1" 
+                              strokeWidth="1" 
+                              fill="none"
+                              filter="url(#shadow)"
+                            />
+                            <line 
+                              x1="149" 
+                              y1="9" 
+                              x2="149.8" 
+                              y2="70" 
+                              stroke="#f1f1f1"
+                              strokeWidth="1"
+                              filter="url(#shadow)"
+                            />
+                          </svg>
+                        </div> */}
+                        
+          <div className="flex justify-between items-end ">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <div className="flex items-center">
-                <div className="text-2xl font-bold text-green-800">
-                  RuralShores
-                  <div className="text-sm text-brown-600">
-                    <div>Countryside</div>
-                    <div>Nationwide</div>
-                  </div>
+              <div className="flex items-center relative">
+             
+                
+                {/* Logo Text */}
+                <div className="text-2xl font-bold">
+          <Image src="/logo.png" alt="RuralShores" width={200} height={200} />
+             
                 </div>
               </div>
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-8 mr-52">
               {menuItems.map((item) => (
                 <div key={item.label} className="relative">
                   {item.dropdown ? (
@@ -78,7 +111,7 @@ const Navbar: React.FC = () => {
                       onMouseEnter={() => setActiveDropdown(item.label)}
                       onMouseLeave={() => setActiveDropdown(null)}
                     >
-                      <span className={item.label === 'Home' ? 'text-red-600 border-b-2 border-red-600' : ''}>
+                      <span className={item.label === 'Home' ? 'text-red-400 border-b-2 border-red-400' : ''}>
                         {item.label}
                       </span>
                       {item.dropdown && (
@@ -91,49 +124,44 @@ const Navbar: React.FC = () => {
                     <a
                       href={item.href}
                       className={`text-gray-700 hover:text-red-600 transition-colors ${
-                        item.label === 'Home' ? 'text-red-600 border-b-2 border-red-600' : ''
+                        item.label === 'Home' ? 'text-red-400 border-b-2 border-red-400' : ''
                       }`}
                     >
                       {item.label}
                     </a>
                   )}
 
-                  {/* Services Special Section */}
-                  {item.label === 'Services' && (
+                  {/* Services Special Dropdown */}
+                  {item.label === 'Services' && activeDropdown === item.label && (
                     <div className="absolute top-full left-0 mt-2">
-                      <div className="text-center">
-                        <div className="font-normal text-lg text-black mb-0">
-                          Services
+                      <div className="bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50 p-4">
+                        {/* Services Header */}
+                      
+                        {/* Dropdown Menu Items */}
+                        <div className="space-y-2">
+                          {item.dropdown?.map((dropdownItem, index) => (
+                            <a
+                              key={dropdownItem.label}
+                              href={dropdownItem.href}
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors rounded"
+                            >
+                              <div className="flex items-center justify-between">
+                                <span>{dropdownItem.label}</span>
+                                {index === 0 && (
+                                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                  </svg>
+                                )}
+                              </div>
+                            </a>
+                          ))}
                         </div>
-                        <svg width="300" height="30" viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg">
-                          <defs>
-                            <filter id="shadow" x="-10%" y="-10%" width="140%" height="140%">
-                              <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#000"/>
-                            </filter>
-                          </defs>
-                          <path 
-                            d="M10 30 Q 10 10 30 10 L 270 10 Q 290 10 290 30" 
-                            stroke="#f1f1f1" 
-                            strokeWidth="1" 
-                            fill="none"
-                            filter="url(#shadow)"
-                          />
-                          <line 
-                            x1="149" 
-                            y1="9" 
-                            x2="149.8" 
-                            y2="70" 
-                            stroke="#f1f1f1"
-                            strokeWidth="1"
-                            filter="url(#shadow)"
-                          />
-                        </svg>
                       </div>
                     </div>
                   )}
 
-                  {/* Dropdown Menu */}
-                  {item.dropdown && activeDropdown === item.label && (
+                  {/* Regular Dropdown Menu for other items */}
+                  {item.dropdown && activeDropdown === item.label && item.label !== 'Services' && (
                     <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -157,7 +185,7 @@ const Navbar: React.FC = () => {
               ))}
 
               {/* Contact Button */}
-              <button className="bg-red-400 hover:bg-red-500 text-white px-6 py-2 rounded-md transition-colors">
+              <button className="bg-red-400 hover:bg-red-500 text-white px-6 py-2 rounded-md transition-colors font-bold">
                 Contact us
               </button>
             </div>
@@ -171,9 +199,7 @@ const Navbar: React.FC = () => {
           <div className="flex justify-between items-center h-16">
             {/* Mobile Logo */}
             <div className="flex-shrink-0">
-              <div className="text-xl font-bold text-green-800">
-                RuralShores
-              </div>
+            <Image src="/logo.png" alt="RuralShores" width={120} height={120} />
             </div>
 
             {/* Mobile Menu Button */}
@@ -217,7 +243,8 @@ const Navbar: React.FC = () => {
                 {/* Mobile Menu Header */}
                 <div className="flex items-center justify-between p-4 border-b border-gray-200">
                   <div className="text-xl font-bold text-green-800">
-                    RuralShores
+                    <Image src="/logo.png" alt="RuralShores" width={120} height={120} />
+                 
                   </div>
                   <button
                     onClick={handleMobileMenuToggle}
@@ -239,7 +266,7 @@ const Navbar: React.FC = () => {
                             onClick={() => handleDropdownToggle(item.label)}
                             className="flex items-center justify-between w-full text-left py-2 text-gray-700 hover:text-red-600 transition-colors"
                           >
-                            <span className={item.label === 'Home' ? 'text-red-600' : ''}>
+                            <span className={item.label === 'Home' ? 'text-red-400' : ''}>
                               {item.label}
                             </span>
                             <svg
@@ -266,7 +293,7 @@ const Navbar: React.FC = () => {
                                   <a
                                     key={dropdownItem.label}
                                     href={dropdownItem.href}
-                                    className="block py-2 text-sm text-gray-600 hover:text-red-600 transition-colors"
+                                    className="block py-2 text-sm text-gray-600 hover:text-red-600 transition-colors font-alkes"
                                   >
                                     {dropdownItem.label}
                                   </a>
@@ -278,8 +305,8 @@ const Navbar: React.FC = () => {
                       ) : (
                         <a
                           href={item.href}
-                          className={`block py-2 text-gray-700 hover:text-red-600 transition-colors ${
-                            item.label === 'Home' ? 'text-red-600' : ''
+                          className={`block py-2 text-gray-700 hover:text-red-600 transition-colors font-alkes${
+                            item.label === 'Home' ? 'text-red-400' : ''
                           }`}
                         >
                           {item.label}
@@ -291,7 +318,7 @@ const Navbar: React.FC = () => {
 
                 {/* Mobile Contact Button */}
                 <div className="p-4 border-t border-gray-200">
-                  <button className="w-full bg-red-400 hover:bg-red-500 text-white px-6 py-3 rounded-md transition-colors">
+                  <button className="w-full bg-red-400 hover:bg-red-500 text-white px-6 py-3 rounded-md transition-colors fon-alkes">
                     Contact us
                   </button>
                 </div>
