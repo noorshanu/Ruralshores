@@ -98,9 +98,9 @@ const Slider = () => {
                 : 'opacity-0 translate-x-full'
             }`}
           >
-            <div className="flex h-full">
+            <div className="flex items-center h-full">
               {/* Left side - Text content */}
-              <div className="w-2/3 flex items-center justify-center p-12 relative z-10">
+              <div className="w-1/2 flex items-center justify-center p-12 relative z-10">
                 <div className="max-w-2xl">
                   <h1 className="font-alkes text-6xl md:text-7xl font-bold text-orange-600 mb-6 leading-tight">
                     {slide.title}
@@ -113,16 +113,16 @@ const Slider = () => {
               </div>
 
               {/* Right side - Image */}
-              <div className="w-1/3 relative">
+              <div className="w-1/2 relative mx-auto">
                 {/* Decorative arc */}
             
                 
-                <div className="relative w-full h-full">
+                <div className="relative w-[500px] h-[500px] mx-auto">
                   <Image
                     src={slide.image}
                     alt={slide.imageAlt}
                     fill
-                    className="w-full h-full"
+                    className=" w-[500px] h-[500px] mx-auto"
                     priority={index === 0}
                   />
                 </div>
