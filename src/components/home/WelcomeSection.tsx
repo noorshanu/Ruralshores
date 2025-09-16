@@ -24,7 +24,7 @@ const WelcomeSection = () => {
             {/* Left Section - Text Content */}
             <div className="sm:w-[56%] w-full h-[460px] bg-[#f5f2f3] rounded-r-[110px] rounded-br-[110px] px-22 py-16 re" >
               <div className=''>
-                <h1 className="text-4xl sm:text-6xl font-bold text-orange-500 mb-2 font-alkes">
+                <h1 className="text-4xl sm:text-6xl font-bold text-[#f56d5f] mb-2 font-alkes">
                   Welcome!
                 </h1>
                 <div className="w-20 h-1 bg-yellow-400 ml-4"></div>
