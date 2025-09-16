@@ -18,11 +18,11 @@ const WelcomeSection = () => {
         </div>
 
         {/* Main White Container */}
-        <div className=" w-full">
+        <div className=" w-full relative">
           <div className="flex flex-col sm:flex-row  w-full items-center">
             
             {/* Left Section - Text Content */}
-            <div className="sm:w-1/2 w-full h-[460px] bg-[#f5f2f3] rounded-r-[110px] rounded-br-[110px] px-16 py-16" >
+            <div className="sm:w-[56%] w-full h-[460px] bg-[#f5f2f3] rounded-r-[110px] rounded-br-[110px] px-22 py-16 re" >
               <div className=''>
                 <h1 className="text-4xl sm:text-6xl font-bold text-orange-500 mb-2 font-alkes">
                   Welcome!
@@ -38,8 +38,8 @@ const WelcomeSection = () => {
             </div>
 
             {/* Right Section - Image */}
-            <div className="sm:w-1/2 w-full ">
-              <div className="relative">
+            <div className="sm:w-1/2 w-full absolute right-0 z-20">
+              <div className="relative z-20">
                 <div className="relative w-full h-[400px]">
                   <Image 
                     src="/wel.jpg" 

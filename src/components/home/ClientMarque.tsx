@@ -11,7 +11,7 @@ const ClientMarque = () => {
   ]
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-client">
       <div className=" ">
         {/* Section Title */}
         <div className="text-center mb-12">

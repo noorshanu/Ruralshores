@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Marquee from 'react-fast-marquee'
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 // JSON data for marquee items
 const marqueeData = [
@@ -70,9 +71,7 @@ const MarqueNew = () => {
               className="wp-btn-hover bg-blue-600 hover:bg-blue-700 text-white px-6 py-1 rounded-full transition-all duration-400 flex  items-center gap-4  relative overflow-hidden"
             >
               <span className="whitespace-nowrap relative z-10 transition-transform duration-400 font-makozin">{item.text}</span>
-              <svg className="w-4 h-4 relative z-10 transition-all duration-400 transform -translate-x-1 hover:translate-x-2 hover:rotate-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              <MdKeyboardArrowRight className="w-4 h-4 relative z-10 transition-all duration-400 transform -translate-x-1 hover:translate-x-2 hover:rotate-5" />
             </a>
           </div>
         ))}
