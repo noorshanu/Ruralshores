@@ -1,51 +1,89 @@
 import React from 'react'
+import { FiSearch, FiBriefcase, FiMonitor } from 'react-icons/fi'
 
 const Services = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-50 relative">
       <div className="container mx-auto px-4">
         {/* Section Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-orange-500 mb-2">Services</h2>
-          <div className="w-24 h-1 bg-orange-500 mx-auto"></div>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-black mb-4 font-alkes">Services</h2>
+          <div className="w-24 h-1 bg-yellow-400 mx-auto"></div>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
-          {/* Corporate Service */}
-          <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-8 text-center hover:shadow-xl transition-shadow duration-300">
-            <div className="mb-6">
-              <img src="/icon1.png" alt="Corporate Icon" className="w-16 h-16 mx-auto" />
+        {/* Services Grid - Desktop Overlapping, Mobile Stacked */}
+        <div className="relative max-w-6xl mx-auto">
+          {/* Desktop Layout - Hidden on Mobile */}
+          <div className="hidden lg:flex justify-center items-center relative">
+            {/* Corporate Service - Left */}
+            <div className="bg-gray-200 rounded-[3rem] p-10 text-center w-80 h-96 flex flex-col justify-center relative z-10 shadow-lg">
+              <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 shadow-md">
+                <FiSearch className="text-red-400 text-2xl" />
+              </div>
+              <h3 className="text-2xl font-bold text-black mb-4 font-alkes">Corporate</h3>
+              <p className="text-gray-600 leading-relaxed text-base px-2">
+                Ignite your brand's presence with trained, aligned field teams.
+              </p>
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Corporate</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Ignite your brand&apos;s presence with trained, aligned field teams.
-            </p>
+
+            {/* Employability Service - Center (Overlapping) */}
+            <div className="bg-gray-200 rounded-[3rem] p-10 text-center w-80 h-96 flex flex-col justify-center relative z-20 -ml-16 -mr-16 shadow-xl">
+              <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 shadow-md">
+                <FiBriefcase className="text-red-400 text-2xl" />
+              </div>
+              <h3 className="text-2xl font-bold text-black mb-4 font-alkes">Employability</h3>
+              <p className="text-gray-600 leading-relaxed text-base px-2">
+                Creating confidence capability and career readiness
+              </p>
+            </div>
+
+            {/* Content Service - Right */}
+            <div className="bg-gray-200 rounded-[3rem] p-10 text-center w-80 h-96 flex flex-col justify-center relative z-10 shadow-lg">
+              <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 shadow-md">
+                <FiMonitor className="text-red-400 text-2xl" />
+              </div>
+              <h3 className="text-2xl font-bold text-black mb-4 font-alkes">Content</h3>
+              <p className="text-gray-600 leading-relaxed text-base px-2">
+                Content that empowers,engages, and elevates
+              </p>
+            </div>
           </div>
 
-          {/* Employability Service */}
-          <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-8 text-center hover:shadow-xl transition-shadow duration-300">
-            <div className="mb-6">
-              <img src="/icon1.png" alt="Employability Icon" className="w-16 h-16 mx-auto" />
+          {/* Mobile Layout - Visible on Mobile Only */}
+          <div className="lg:hidden space-y-8">
+            {/* Corporate Service */}
+            <div className="bg-gray-200 rounded-3xl p-8 text-center">
+              <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <FiSearch className="text-red-400 text-2xl" />
+              </div>
+              <h3 className="text-xl font-bold text-black mb-4 font-alkes">Corporate</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Ignite your brand's presence with trained, aligned field teams.
+              </p>
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Employability</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Creating confidence capability and career readiness
-            </p>
-          </div>
 
-          {/* Content Service */}
-          <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-8 text-center hover:shadow-xl transition-shadow duration-300">
-            <div className="mb-6">
-              <img src="/icon1.png" alt="Content Icon" className="w-16 h-16 mx-auto" />
+            {/* Employability Service */}
+            <div className="bg-gray-200 rounded-3xl p-8 text-center">
+              <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <FiBriefcase className="text-red-400 text-2xl" />
+              </div>
+              <h3 className="text-xl font-bold text-black mb-4 font-alkes">Employability</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Creating confidence capability and career readiness
+              </p>
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Content</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Content that empowers, engages, and elevates
-            </p>
-          </div>
 
+            {/* Content Service */}
+            <div className="bg-gray-200 rounded-3xl p-8 text-center">
+              <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <FiMonitor className="text-red-400 text-2xl" />
+              </div>
+              <h3 className="text-xl font-bold text-black mb-4 font-alkes">Content</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Content that empowers,engages, and elevates
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
