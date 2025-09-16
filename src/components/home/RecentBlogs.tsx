@@ -29,17 +29,17 @@ const RecentBlogs = () => {
             </div>
 
             {/* Right Section - Text and Call-to-Action */}
-            <div className="text-center lg:text-left space-y-6">
-              <h3 className="text-3xl md:text-4xl font-bold text-[#F76C5E]">
+            <div className="text-center lg:text-left space-y-4">
+              <h3 className="text-3xl text-center sm:text-4xl font-bold font-makozin text-[#F76C5E]">
                 From Our Desk- to Yours
               </h3>
               
-              <p className="text-lg text-gray-700">
+              <p className="text-xl font-makozin text-black text-center ">
                 Discover the Latest Reads!
               </p>
               
-              <div className="pt-4">
-                <button className="bg-white border border-orange-300 text-orange-500 px-8 py-3 rounded-lg font-medium hover:bg-orange-50 transition-colors duration-300">
+              <div className="pt-4 flex justify-center  ">
+                <button className="bg-transparent text-xl font-medium font-makozin border border-[#F76C5E] text-black  px-8 py-1 rounded-lg  hover:bg-orange-50 transition-colors duration-300">
                   Know more
                 </button>
               </div>
