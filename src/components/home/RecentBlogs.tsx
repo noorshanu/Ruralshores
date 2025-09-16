@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 const RecentBlogs = () => {
   return (
-    <section className="py-16 bg-amber-50">
-      <div className="container mx-auto px-4">
+    <section className="py-2 bg-[#f5f2f3]">
+      <div className=" mx-auto ">
         {/* Section Title */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-orange-500 mb-3">Recent Blogs Posts</h2>
@@ -12,20 +12,19 @@ const RecentBlogs = () => {
         </div>
 
         {/* Main Content Area */}
-        <div className="bg-amber-50 rounded-3xl p-8 md:p-12">
+        <div className=" ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
             {/* Left Section - Visual Content */}
-            <div className="flex justify-center lg:justify-start">
-              <div className="relative">
-                <div className="w-80 h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-lg">
-                  <Image 
-                    src="/blog.png" 
-                    alt="Person using tablet with blog content" 
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+            <div className="w-full">
+              <div className="relative w-full h-[450px] rounded-r-3xl overflow-hidden">
+                <Image 
+                  src="/blog.jpg" 
+                  alt="Person using tablet with blog content" 
+                  fill
+                  className="object-cover"
+                  priority={true}
+                />
               </div>
             </div>
 
