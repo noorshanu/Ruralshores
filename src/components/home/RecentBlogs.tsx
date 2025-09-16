@@ -6,9 +6,9 @@ const RecentBlogs = () => {
     <section className="py-6 ">
       <div className=" mx-auto ">
         {/* Section Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-[#F76C5E] mb-3">Recent Blogs Posts</h2>
-          <div className="w-24 h-1 bg-yellow-400 mx-auto"></div>
+        <div className="text-center mb-12 max-w-sm mx-auto">
+          <h2 className="text-4xl font-alkes font-medium text-[#F76C5E] mb-2">Recent Blogs Posts</h2>
+          <div className="w-18 h-1 bg-yellow-400 ml-11  "></div>
         </div>
 
         {/* Main Content Area */}
