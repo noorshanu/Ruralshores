@@ -102,7 +102,7 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center space-x-8 mr-52">
+            <div className="hidden lg:flex items-center space-x-8 ">
               {menuItems.map((item) => (
                 <div key={item.label} className="relative">
                   {item.dropdown ? (
