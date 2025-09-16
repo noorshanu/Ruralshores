@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const RecentBlogs = () => {
   return (
-    <section className="py-2 ">
+    <section className="py-6 ">
       <div className=" mx-auto ">
         {/* Section Title */}
         <div className="text-center mb-12">
