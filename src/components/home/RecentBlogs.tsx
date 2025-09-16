@@ -20,7 +20,7 @@ const RecentBlogs = () => {
               <div className="relative">
                 <div className="w-80 h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-lg">
                   <Image 
-                    src="/mon.jpg" 
+                    src="/blog.png" 
                     alt="Person using tablet with blog content" 
                     fill
                     className="object-cover"
