@@ -12,11 +12,11 @@ const Services = () => {
         </div>
 
         {/* Services Grid - Desktop Overlapping, Mobile Stacked */}
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative  mx-auto">
           {/* Desktop Layout - Hidden on Mobile */}
           <div className="hidden lg:flex justify-center items-center relative">
             {/* Corporate Service - Left */}
-            <div className="bg-gray-200 rounded-[3rem] p-10 text-center w-80 h-96 flex flex-col justify-center relative z-10 shadow-lg">
+            <div className="bg-[#F5F2F3] border-4 border-white hover:border-[#F56D5F] rounded-[91px] p-8 text-center  flex flex-col justify-center relative z-10 shadow-lg">
               <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 shadow-md">
                 <FiSearch className="text-red-400 text-2xl" />
               </div>
@@ -27,7 +27,7 @@ const Services = () => {
             </div>
 
             {/* Employability Service - Center (Overlapping) */}
-            <div className="bg-gray-200 rounded-[3rem] p-10 text-center w-80 h-96 flex flex-col justify-center relative z-20 -ml-16 -mr-16 shadow-xl">
+            <div className="bg-gray-200 rounded-[91px] p-10 text-center w-80 h-96 flex flex-col justify-center relative z-20 -ml-8 -mr-8 shadow-xl">
               <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 shadow-md">
                 <FiBriefcase className="text-red-400 text-2xl" />
               </div>
@@ -38,7 +38,7 @@ const Services = () => {
             </div>
 
             {/* Content Service - Right */}
-            <div className="bg-gray-200 rounded-[3rem] p-10 text-center w-80 h-96 flex flex-col justify-center relative z-10 shadow-lg">
+            <div className="bg-gray-200 rounded-[91px] p-10 text-center w-80 h-96 flex flex-col justify-center relative z-10 shadow-lg">
               <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 shadow-md">
                 <FiMonitor className="text-red-400 text-2xl" />
               </div>
@@ -52,7 +52,7 @@ const Services = () => {
           {/* Mobile Layout - Visible on Mobile Only */}
           <div className="lg:hidden space-y-8">
             {/* Corporate Service */}
-            <div className="bg-gray-200 rounded-3xl p-8 text-center">
+            <div className="bg-gray-200 rounded-[91px] p-8 text-center">
               <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <FiSearch className="text-red-400 text-2xl" />
               </div>
@@ -63,7 +63,7 @@ const Services = () => {
             </div>
 
             {/* Employability Service */}
-            <div className="bg-gray-200 rounded-3xl p-8 text-center">
+            <div className="bg-gray-200 rounded-[91px] p-8 text-center">
               <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <FiBriefcase className="text-red-400 text-2xl" />
               </div>
@@ -74,7 +74,7 @@ const Services = () => {
             </div>
 
             {/* Content Service */}
-            <div className="bg-gray-200 rounded-3xl p-8 text-center">
+            <div className="bg-gray-200 rounded-[91px] p-8 text-center">
               <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <FiMonitor className="text-red-400 text-2xl" />
               </div>
