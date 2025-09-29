@@ -6,7 +6,11 @@ import WelcomeSection from "@/components/home/WelcomeSection";
 import CounterSection from "@/components/home/CounterSection";
 import RecentBlogs from "@/components/home/RecentBlogs";
 import ClientMarque from "@/components/home/ClientMarque";
+// import Clientmarque2 from "@/components/home/Clientmarque2";
 import CTA from "@/components/home/CTA";
+import Ctav2 from "@/components/home/Ctav2";
+import Vision from "@/components/Vision";
+
 
 export default function Home() {
   return (
@@ -14,11 +18,14 @@ export default function Home() {
       <Hero />
       <MarqueNew />
       <WelcomeSection />
+      <Vision />
       <CounterSection />
       <RecentBlogs />
       <Services />
       <ClientMarque />
+      {/* <Clientmarque2 /> */}
       <CTA />
+      <Ctav2 />
    
     </div>
   );

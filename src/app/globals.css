@@ -90,6 +90,42 @@
   animation-play-state: paused;
 }
 
+/* Dual Direction Marquee Animations */
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 30s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 35s linear infinite;
+}
+
+.hover\:pause-animation:hover {
+  animation-play-state: paused;
+}
+
+/* Smooth hover transitions for logos */
+.group:hover .group-hover\:grayscale-0 {
+  filter: grayscale(0%) brightness(110%);
+}
+
 body{
   background-color: #fff;
 }

@@ -107,17 +107,70 @@ const Navbar: React.FC = () => {
                 <div key={item.label} className="relative">
                   {item.dropdown ? (
                     <div
-                      className="flex items-center cursor-pointer text-gray-700 hover:text-red-600 transition-colors"
+                      className="relative"
                       onMouseEnter={() => setActiveDropdown(item.label)}
                       onMouseLeave={() => setActiveDropdown(null)}
                     >
-                      <span className={item.label === 'Home' ? 'text-red-400 border-b-2 border-red-400' : ''}>
-                        {item.label}
-                      </span>
-                      {item.dropdown && (
-                        <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
+                      <div className="flex items-center cursor-pointer text-gray-700 hover:text-red-600 transition-colors">
+                        <span className={item.label === 'Home' ? 'text-red-400 border-b-2 border-red-400' : ''}>
+                          {item.label}
+                        </span>
+                        {item.dropdown && (
+                          <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        )}
+                      </div>
+
+                      {/* Services Special Dropdown */}
+                      {item.label === 'Services' && activeDropdown === item.label && (
+                        <div className="absolute top-full left-0 mt-2">
+                          <div className="bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50 p-4">
+                            {/* Services Header */}
+                          
+                            {/* Dropdown Menu Items */}
+                            <div className="space-y-2">
+                              {item.dropdown?.map((dropdownItem, index) => (
+                                <a
+                                  key={dropdownItem.label}
+                                  href={dropdownItem.href}
+                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors rounded"
+                                >
+                                  <div className="flex items-center justify-between">
+                                    <span>{dropdownItem.label}</span>
+                                    {index === 0 && (
+                                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                      </svg>
+                                    )}
+                                  </div>
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Regular Dropdown Menu for other items */}
+                      {item.dropdown && activeDropdown === item.label && item.label !== 'Services' && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50"
+                        >
+                          <div className="py-1">
+                            {item.dropdown.map((dropdownItem) => (
+                              <a
+                                key={dropdownItem.label}
+                                href={dropdownItem.href}
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
+                              >
+                                {dropdownItem.label}
+                              </a>
+                            ))}
+                          </div>
+                        </motion.div>
                       )}
                     </div>
                   ) : (
@@ -129,57 +182,6 @@ const Navbar: React.FC = () => {
                     >
                       {item.label}
                     </a>
-                  )}
-
-                  {/* Services Special Dropdown */}
-                  {item.label === 'Services' && activeDropdown === item.label && (
-                    <div className="absolute top-full left-0 mt-2">
-                      <div className="bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50 p-4">
-                        {/* Services Header */}
-                      
-                        {/* Dropdown Menu Items */}
-                        <div className="space-y-2">
-                          {item.dropdown?.map((dropdownItem, index) => (
-                            <a
-                              key={dropdownItem.label}
-                              href={dropdownItem.href}
-                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors rounded"
-                            >
-                              <div className="flex items-center justify-between">
-                                <span>{dropdownItem.label}</span>
-                                {index === 0 && (
-                                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                  </svg>
-                                )}
-                              </div>
-                            </a>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Regular Dropdown Menu for other items */}
-                  {item.dropdown && activeDropdown === item.label && item.label !== 'Services' && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50"
-                    >
-                      <div className="py-1">
-                        {item.dropdown.map((dropdownItem) => (
-                          <a
-                            key={dropdownItem.label}
-                            href={dropdownItem.href}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-600 transition-colors"
-                          >
-                            {dropdownItem.label}
-                          </a>
-                        ))}
-                      </div>
-                    </motion.div>
                   )}
                 </div>
               ))}
