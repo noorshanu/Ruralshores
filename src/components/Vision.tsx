@@ -16,8 +16,8 @@ const Vision = () => {
               </div>
               
               {/* Card */}
-              <div className="bg-white rounded-2xl border-2 border-black p-8 pt-12 text-center shadow-sm hover:shadow-md transition-shadow duration-300 h-64 flex flex-col justify-center">
-                <h3 className="text-2xl font-alkes font-bold text-gray-800 mb-6">
+              <div className="bg-white rounded-2xl border border-black px-6 py-1 text-center shadow-sm hover:shadow-md transition-shadow duration-300 h-56 flex flex-col justify-center">
+                <h3 className="text-2xl font-alkes font-semibold text-gray-800 mb-6">
                   Our Vision
                 </h3>
                 <p className="text-gray-600 font-alkes leading-relaxed text-lg">
@@ -29,14 +29,14 @@ const Vision = () => {
             {/* Our Mission Card */}
             <div className="relative">
               {/* Icon Circle */}
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 z-10">
+              <div className="absolute -top-14 left-1/2 transform -translate-x-1/2 z-10">
               <Image src="/mission.png" alt="Vision" width={125} height={100} />
               
               </div>
               
               {/* Card */}
-              <div className="bg-white rounded-2xl border-2 border-black p-8 pt-12 text-center shadow-sm hover:shadow-md transition-shadow duration-300 h-64 flex flex-col justify-center">
-                <h3 className="text-2xl font-alkes font-bold text-gray-800 mb-6">
+              <div className="bg-white rounded-2xl border border-black px-6 py-1 text-center shadow-sm hover:shadow-md transition-shadow duration-300 h-56 flex flex-col justify-center">
+                <h3 className="text-2xl font-alkes font-semibold text-gray-800 mb-6">
                   Our Mission
                 </h3>
                 <p className="text-gray-600 font-alkes leading-relaxed text-lg">

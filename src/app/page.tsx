@@ -19,10 +19,14 @@ export default function Home() {
       <Hero />
       <MarqueNew />
       <WelcomeSection />
-      <Vision />
+      <div className="pt-12 pb-4">
+        <Vision />
+      </div>
       <CounterSection />
       <RecentBlogs />
-      <Ctav2 />
+   <div className="pt-12 pb-4">
+        <Ctav2 />
+      </div>
       <Services />
       
       <HomeTestimonials />
