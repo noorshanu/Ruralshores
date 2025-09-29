@@ -133,7 +133,7 @@ const Slider = () => {
     
       </div>
                  {/* Wave design at bottom */}
-                 <div className="absolute bottom-0 w-full overflow-hidden z-80">
+                 {/* <div className="absolute bottom-0 w-full overflow-hidden z-80">
         <svg
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
@@ -155,7 +155,7 @@ const Slider = () => {
             opacity="0.4"
           />
         </svg>
-      </div>
+      </div> */}
   
 
       {/* Navigation arrows */}

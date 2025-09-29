@@ -10,6 +10,7 @@ import ClientMarque from "@/components/home/ClientMarque";
 import CTA from "@/components/home/CTA";
 import Ctav2 from "@/components/home/Ctav2";
 import Vision from "@/components/Vision";
+import HomeTestimonials from "@/components/home/HomeTestimonials";
 
 
 export default function Home() {
@@ -26,7 +27,7 @@ export default function Home() {
       {/* <Clientmarque2 /> */}
       <CTA />
       <Ctav2 />
-   
+      <HomeTestimonials />
     </div>
   );
 }

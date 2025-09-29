@@ -11,25 +11,25 @@ const ClientMarque = () => {
   ]
 
   return (
-    <section className="py-16 bg-client">
+    <section className="py-8 bg-client">
       <div className=" ">
         {/* Section Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-red-500 mb-3">Clients</h2>
-          <div className="w-24 h-1 bg-yellow-400 mx-auto"></div>
+        <div className="text-center mb-8">
+          <h2 className="text-2xl font-bold text-red-500 mb-2">Clients</h2>
+          <div className="w-20 h-1 bg-yellow-400 mx-auto"></div>
         </div>
 
         {/* Infinite Marquee Animation */}
-        <div className="overflow-x-hidden py-4">
+        <div className="overflow-x-hidden py-6">
           <div className="flex animate-marquee">
             {/* First set of clients */}
             {clients.map((client, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg flex items-center justify-center p-4 mx-4 flex-shrink-0"
+                className="bg-white rounded-lg flex items-center justify-center p-2 mx-2 flex-shrink-0"
                 style={{
-                  width: '300px',
-                  height: '125px',
+                  width: '200px',
+                  height: '80px',
                   boxShadow: '6px 8px 6px 5px rgba(34.823437500000004, 34.823437500000004, 34.823437500000004, 0.6)'
                 }}
               >
@@ -48,10 +48,10 @@ const ClientMarque = () => {
             {clients.map((client, index) => (
               <div
                 key={`duplicate-${index}`}
-                className="bg-white rounded-lg flex items-center justify-center p-4 mx-4 flex-shrink-0"
+                className="bg-white rounded-lg flex items-center justify-center p-2 mx-2 flex-shrink-0"
                 style={{
-                  width: '300px',
-                  height: '125px',
+                  width: '200px',
+                  height: '80px',
                   boxShadow: '6px 8px 6px 5px rgba(34.823437500000004, 34.823437500000004, 34.823437500000004, 0.6)'
                 }}
               >
