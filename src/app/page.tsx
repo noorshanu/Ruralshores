@@ -22,12 +22,14 @@ export default function Home() {
       <Vision />
       <CounterSection />
       <RecentBlogs />
+      <Ctav2 />
       <Services />
+      
+      <HomeTestimonials />
       <ClientMarque />
       {/* <Clientmarque2 /> */}
       <CTA />
-      <Ctav2 />
-      <HomeTestimonials />
+ 
     </div>
   );
 }
