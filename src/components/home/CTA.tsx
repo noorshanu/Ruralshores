@@ -3,7 +3,7 @@ import { FiPhone } from 'react-icons/fi'
 
 const CTA = () => {
   return (
-    <section className="py-8 ">
+    <section className="py-16 ">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 max-w-4xl mx-auto">
           {/* Left Side - Contact Info */}
