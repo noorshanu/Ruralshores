@@ -86,7 +86,7 @@ const Slider = () => {
       </div>
 
       {/* Slides container */}
-      <div className="relative h-[600px]">
+      <div className="relative h-[600px] container mx-auto">
         {slides.map((slide, index) => (
           <div
             key={slide.id}

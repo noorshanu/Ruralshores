@@ -18,7 +18,7 @@ const menuItems: MenuItem[] = [
       { label: "About Us", href: "/about-us" },
       { label: "Our Team", href: "/our-team" },
       { label: "Success Stories", href: "/success-stories" },
-      { label: "Career", href: "/career" },
+      { label: "Career", href: "/careers" },
     ],
   },
   {
@@ -61,8 +61,8 @@ const menuItems: MenuItem[] = [
     label: "Insights",
     dropdown: [
       { label: "Blog", href: "/blog" },
-      { label: "Case Studies", href: "/case-studies" },
-      { label: "Research", href: "/research" },
+      { label: "Faq", href: "/faq" },
+   
     ],
   },
 ];
@@ -234,9 +234,9 @@ const Navbar: React.FC = () => {
               ))}
 
               {/* Contact Button */}
-              <button className="bg-red-400 hover:bg-red-500 text-white px-6 py-2 rounded-md transition-colors font-bold">
+              <a href="/contact-us" className="bg-red-400 hover:bg-red-500 text-white px-6 py-2 rounded-md transition-colors font-bold">
                 Contact us
-              </button>
+              </a>
             </div>
           </div>
         </div>
