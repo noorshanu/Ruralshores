@@ -21,12 +21,12 @@ const Banner = () => {
       <div className="relative z-10 container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Section - Text Content */}
         <div className="text-left">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#E75B4D] mb-4">
+          <h1 className="text-4xl sm:text-6xl font-bold text-[#E75B4D] mb-1 font-alkes">
             About Us
           </h1>
-          <div className="w-16 h-2 bg-[#FFD700] mb-8"></div>
+          <div className="w-24 h-2 bg-[#FFD700] mb-3"></div>
           
-          <div className="space-y-2 text-lg md:text-xl text-gray-800 font-medium">
+          <div className="space-y-2 text-lg md:text-3xl font-makozin text-gray-800 font-medium">
             <p>Training for Transformation,</p>
             <p>Monitoring for Progress,</p>
             <p>Auditing for impact.</p>
