@@ -22,14 +22,14 @@ const slides: SlideData[] = [
   {
     id: 2,
     title: "Training",
-    description: "Comprehensive training programs to enhance skills and knowledge development.",
+    description: "Empowering youth through skill-based industry-aligned learning programs.",
     image: "/train.png",
     imageAlt: "Training services"
   },
   {
     id: 3,
-    title: "Monitoring",
-    description: "Continuous monitoring and evaluation to ensure quality and compliance.",
+    title: "Auditing",
+    description: "Thorough evaluations to maintain standards and drive continuous improvement.",
     image: "/train.png",
     imageAlt: "Monitoring services"
   },
@@ -102,11 +102,11 @@ const Slider = () => {
               {/* Left side - Text content */}
               <div className="w-1/2 flex items-center justify-center p-12 relative z-10">
                 <div className="max-w-2xl">
-                  <h1 className="font-alkes text-6xl md:text-7xl font-bold text-[#f26d5a] mb-6 leading-tight">
+                  <h1 className="font-alkes text-6xl md:text-[80px] font-bold text-[#f26d5a]  leading-tight">
                     {slide.title}
                   </h1>
-                  <div className="w-24 h-1 bg-yellow-400 mb-8"></div>
-                  <p className="font-alkes text-xl text-gray-800 leading-relaxed">
+                  <div className="w-28 h-1 bg-yellow-400 mb-3 ml-2.5"></div>
+                  <p className="font-alkes text-2xl text-[#000] leading-relaxed">
                     {slide.description}
                   </p>
                 </div>
@@ -117,12 +117,12 @@ const Slider = () => {
                 {/* Decorative arc */}
             
                 
-                <div className="relative w-[500px] h-[500px] mx-auto">
+                <div className="relative w-[600px] h-[550px] mx-auto">
                   <Image
                     src={slide.image}
                     alt={slide.imageAlt}
                     fill
-                    className=" w-[500px] h-[500px] mx-auto"
+                    className=" w-[600px] h-[400px] mx-auto"
                     priority={index === 0}
                   />
                 </div>
