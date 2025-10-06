@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+
 
 const CEoRsa = () => {
   return (
@@ -53,15 +53,15 @@ const CEoRsa = () => {
               <div className="max-w-2xl">
                 <div className="space-y-6">
                   <p className="text-gray-700 leading-relaxed text-lg">
-                    At RuralShores Skills Academy (RSA), we believe in unlocking the potential of India's youth by bridging the gap between education and employment.
+                    At RuralShores Skills Academy (RSA), we believe in unlocking the potential of India&apos;s youth by bridging the gap between education and employment.
                   </p>
                   
                   <p className="text-gray-700 leading-relaxed text-lg">
-                    Since joining RSA in 2013, after two decades with NIIT Ltd and an education at IIT Delhi, I've seen firsthand how skills can transform lives and communities.
+                    Since joining RSA in 2013, after two decades with NIIT Ltd and an education at IIT Delhi, I&apos;ve seen firsthand how skills can transform lives and communities.
                   </p>
                   
                   <p className="text-gray-700 leading-relaxed text-lg">
-                    Over the years, RSA has empowered millions across rural and underserved regions with the tools they need to succeed in today's economy. Alongside this, we've partnered with corporates to build a skilled workforce aligned with business goals.
+                    Over the years, RSA has empowered millions across rural and underserved regions with the tools they need to succeed in today&apos;s economy. Alongside this, we&apos;ve partnered with corporates to build a skilled workforce aligned with business goals.
                   </p>
                 </div>
               </div>
@@ -72,7 +72,7 @@ const CEoRsa = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center">
               <p className="text-xl text-gray-800 leading-relaxed font-medium">
-                40 years on, Neeraj's through-line is clear: leverage technology and education to convert potential into prosperity—whether for industrial plants, enterprise learners, or rural youth.
+                40 years on, Neeraj&apos;s through-line is clear: leverage technology and education to convert potential into prosperity—whether for industrial plants, enterprise learners, or rural youth.
               </p>
             </div>
           </div>

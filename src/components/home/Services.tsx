@@ -1,5 +1,4 @@
 import React from 'react'
-import { FiSearch, FiBriefcase, FiMonitor } from 'react-icons/fi'
 import Image from 'next/image'
 const Services = () => {
   return (

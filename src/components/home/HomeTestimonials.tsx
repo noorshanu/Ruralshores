@@ -63,7 +63,7 @@ const HomeTestimonials = () => {
               
               {/* Quote */}
               <p className="text-gray-700 italic text-sm leading-relaxed">
-                "{testimonial.quote}"
+                &quot;{testimonial.quote}&quot;
               </p>
             </div>
           ))}

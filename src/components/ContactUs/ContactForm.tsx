@@ -164,7 +164,7 @@ const ContactForm = () => {
                       required
                     />
                     <label htmlFor="recaptcha" className="text-sm text-gray-600">
-                      I'm not a robot
+                      I&apos;m not a robot
                     </label>
                     <div className="ml-2 flex items-center gap-1">
                       <span className="text-xs text-gray-500">reCAPTCHA</span>
