@@ -30,7 +30,7 @@ const slides: SlideData[] = [
     id: 3,
     title: "Auditing",
     description: "Thorough evaluations to maintain standards and drive continuous improvement.",
-    image: "/train.png",
+    image: "/audit.png",
     imageAlt: "Monitoring services"
   },
   {
