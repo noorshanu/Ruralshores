@@ -234,7 +234,7 @@ const Navbar: React.FC = () => {
               ))}
 
               {/* Contact Button */}
-              <a href="/contact-us" className="bg-red-400 hover:bg-red-500 text-white px-6 py-2 rounded-md transition-colors font-bold">
+              <a href="/contact-us" className="bg-[#dfad1f] border border-red-400 hover:bg-red-500 text-white px-6 py-2 rounded-full transition-colors font-bold">
                 Contact us
               </a>
             </div>
