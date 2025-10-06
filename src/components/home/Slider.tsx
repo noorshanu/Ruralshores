@@ -67,11 +67,11 @@ const Slider = () => {
   }
 
   return (
-    <div className="w-full h-[700px] relative  overflow-hidden">
+    <div className="w-full h-[500px] md:h-[700px] relative overflow-hidden">
       {/* Background with pattern */}
       <div className="absolute inset-0 bg-slider">
-        {/* Decorative pattern overlay */}
-        <div className="absolute inset-0 opacity-10">
+        {/* Decorative pattern overlay - hidden on mobile */}
+        <div className="absolute inset-0 opacity-10 hidden md:block">
           <div className="absolute top-10 left-10 w-8 h-8 border-2 border-orange-300 rounded-full"></div>
           <div className="absolute top-20 left-32 w-6 h-6 bg-orange-200 rounded-full"></div>
           <div className="absolute top-32 left-16 w-4 h-4 border-2 border-orange-300"></div>
@@ -86,7 +86,7 @@ const Slider = () => {
       </div>
 
       {/* Slides container */}
-      <div className="relative h-[600px] container mx-auto">
+      <div className="relative h-[400px] md:h-[600px] container mx-auto px-4">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
@@ -98,31 +98,32 @@ const Slider = () => {
                 : 'opacity-0 translate-x-full'
             }`}
           >
-            <div className="flex items-center h-full">
-              {/* Left side - Text content */}
-              <div className="w-1/2 flex items-center justify-center p-12 relative z-10">
-                <div className="max-w-2xl">
-                  <h1 className={`font-alkes font-bold text-[#f26d5a] leading-tight ${slide.id === 1 ? 'text-[45px]' : 'text-6xl md:text-[80px]'}`}>
+            <div className="flex flex-col md:flex-row items-center h-full">
+              {/* Text content */}
+              <div className="w-full md:w-1/2 flex items-center justify-center p-4 md:p-12 relative z-10 ">
+                <div className="max-w-2xl text-center md:text-left">
+                  <h1 className={`font-alkes font-bold text-[#f26d5a] leading-tight mb-4 ${
+                    slide.id === 1 
+                      ? 'text-3xl md:text-[45px]' 
+                      : 'text-3xl md:text-6xl lg:text-[80px]'
+                  }`}>
                     {slide.title}
                   </h1>
-                  <div className="w-28 h-1 bg-yellow-400 mb-3 ml-2.5"></div>
-                  <p className="font-alkes text-2xl text-[#000] leading-relaxed">
+                  <div className="w-16 md:w-28 h-1 bg-yellow-400 mb-3 mx-auto md:ml-2.5"></div>
+                  <p className="font-alkes text-base md:text-2xl text-[#000] leading-relaxed">
                     {slide.description}
                   </p>
                 </div>
               </div>
 
-              {/* Right side - Image */}
-              <div className="w-1/2 relative mx-auto">
-                {/* Decorative arc */}
-            
-                
-                <div className="relative w-[600px] h-[550px] mx-auto">
+              {/* Image */}
+              <div className="w-full md:w-1/2 relative mx-auto  mb-4 md:mb-0">
+                <div className="relative w-[300px] h-[250px] md:w-[600px] md:h-[550px] mx-auto">
                   <Image
                     src={slide.image}
                     alt={slide.imageAlt}
                     fill
-                    className=" w-[600px] h-[400px] mx-auto"
+                    className="object-contain"
                     priority={index === 0}
                   />
                 </div>
@@ -139,31 +140,31 @@ const Slider = () => {
       {/* Navigation arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 z-20"
+        className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 md:p-3 rounded-full shadow-lg transition-all duration-300 z-20"
         aria-label="Previous slide"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 z-20"
+        className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 md:p-3 rounded-full shadow-lg transition-all duration-300 z-20"
         aria-label="Next slide"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
 
       {/* Navigation dots */}
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+      <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2 md:space-x-3 z-20">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
               index === currentSlide
                 ? 'bg-[#f26d5a] scale-125'
                 : 'bg-gray-400 hover:bg-gray-600'
