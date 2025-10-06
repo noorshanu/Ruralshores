@@ -19,7 +19,7 @@ export default function Home() {
       <Hero />
       <MarqueNew />
       <WelcomeSection />
-      <div className="pt-12 pb-4">
+      <div className="pt-12">
         <Vision />
       </div>
       <CounterSection />
