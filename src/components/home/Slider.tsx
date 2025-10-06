@@ -14,9 +14,9 @@ interface SlideData {
 const slides: SlideData[] = [
   {
     id: 1,
-    title: "Auditing",
+    title: "Empowering Youth. Driving Business Growth.",
     description: "Thorough evaluations to maintain standards and drive continuous improvement.",
-    image: "/train.png",
+    image: "/slide1.png",
     imageAlt: "Auditing services"
   },
   {
@@ -35,9 +35,9 @@ const slides: SlideData[] = [
   },
   {
     id: 4,
-    title: "Welcome",
-    description: "Welcome to our comprehensive range of professional services and solutions.",
-    image: "/train.png",
+    title: "Monitoring",
+    description: " Real-time tracking to ensure training quality and learner progress.",
+    image: "/mon.png",
     imageAlt: "Welcome services"
   }
 ]
@@ -102,7 +102,7 @@ const Slider = () => {
               {/* Left side - Text content */}
               <div className="w-1/2 flex items-center justify-center p-12 relative z-10">
                 <div className="max-w-2xl">
-                  <h1 className="font-alkes text-6xl md:text-[80px] font-bold text-[#f26d5a]  leading-tight">
+                  <h1 className={`font-alkes font-bold text-[#f26d5a] leading-tight ${slide.id === 1 ? 'text-[45px]' : 'text-6xl md:text-[80px]'}`}>
                     {slide.title}
                   </h1>
                   <div className="w-28 h-1 bg-yellow-400 mb-3 ml-2.5"></div>
