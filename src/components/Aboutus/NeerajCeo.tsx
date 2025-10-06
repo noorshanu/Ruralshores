@@ -4,11 +4,11 @@ import Image from 'next/image'
 const NeerajCeo = () => {
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 bg-gray-50 rounded-2xl">
         <div className="max-w-4xl mx-auto">
       
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-gray-50">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center ">
             {/* CEO Image */}
             <div className="relative">
               <div className="relative rounded-lg overflow-hidden shadow-lg">
@@ -50,15 +50,15 @@ const NeerajCeo = () => {
           </div>
         </div>
 
-        <div className=" ">
+  
+
+   
+      </div>
+      <div className=" container mx-auto px-4 ">
             <p className="text-black leading-relaxed text-2xl font-makozin pt-18 pb-8">
             The organization was founded under the leadership of Neeraj Agarwal, an IIT Delhi alumnus with two decades of experience at NIIT Ltd. Since then, RSA has transformed thousands of lives, expanding from just 4 centers in 3 states to a pan-India presence, working across sectors, industries, and communities. 
             </p>
         </div>
-
-   
-      </div>
-
       <div className="text-center bg-[#f5f5f5] py-10" >
             <h2 className="text-4xl font-medium text-black font-alkes">
             A Decade of Impact

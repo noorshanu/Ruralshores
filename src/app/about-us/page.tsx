@@ -4,6 +4,7 @@ import AboutInfo from '@/components/Aboutus/AboutInfo'
 import NeerajCeo from '@/components/Aboutus/NeerajCeo'
 import Roadmap from '@/components/Aboutus/Roadmap'
 import Vision from '@/components/Vision'
+import FaqRsa from '@/components/Aboutus/FaqRsa'
 
 const page = () => {
   return (
@@ -15,6 +16,7 @@ const page = () => {
       <div>
         <Vision/>
       </div>
+      <FaqRsa />
       
     </div>
   )
