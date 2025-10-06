@@ -6,14 +6,9 @@ const NeerajCeo = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#E75B4D] mb-3">
-              Leadership
-            </h2>
-            <div className="w-16 h-1 bg-[#FFD700] mx-auto"></div>
-          </div>
+      
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-gray-50">
             {/* CEO Image */}
             <div className="relative">
               <div className="relative rounded-lg overflow-hidden shadow-lg">

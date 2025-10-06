@@ -10,14 +10,14 @@ const AboutInfo = () => {
           </h2>
 
           <div className="space-y-4  leading-relaxed text-xl font-makozin">
-            <p>
+            <p className="text-2xl">
              <strong>RuralShores Skills Academy (RSA) </strong> is India’s most trusted innovator
               in transformative training and audit solutions—empowering
               businesses to enhance both performance and compliance. Our
               integrated approach bridges skill gaps, strengthens frontline
               capabilities, and delivers measurable outcomes across sectors.
             </p>
-            <p>
+            <p className="text-2xl">
               Founded in March 2013, RSA began with a clear mission: to bridge
               the urban-rural divide by equipping young people and corporates
               with the skills, confidence, and opportunities to thrive in
