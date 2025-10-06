@@ -5,13 +5,13 @@ const AboutInfo = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="  ">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 font-alkes">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 font-makozin">
             About RSA
           </h2>
 
-          <div className="space-y-4  leading-relaxed text-lg font-makozin">
+          <div className="space-y-4  leading-relaxed text-xl font-makozin">
             <p>
-              RuralShores Skills Academy (RSA) is India’s most trusted innovator
+             <strong>RuralShores Skills Academy (RSA) </strong> is India’s most trusted innovator
               in transformative training and audit solutions—empowering
               businesses to enhance both performance and compliance. Our
               integrated approach bridges skill gaps, strengthens frontline
