@@ -102,15 +102,15 @@ const Slider = () => {
               {/* Text content */}
               <div className="w-full md:w-1/2 flex items-center justify-center p-4 md:p-12 relative z-10 ">
                 <div className="max-w-2xl text-center md:text-left">
-                  <h1 className={`font-alkes font-bold text-[#f26d5a] leading-tight mb-4 ${
+                  <h1 className={`font-alkes font-bold text-[#f26d5a] leading-tight mb-1 ${
                     slide.id === 1 
-                      ? 'text-3xl md:text-[45px]' 
+                      ? 'text-3xl md:text-[42px]' 
                       : 'text-3xl md:text-6xl lg:text-[80px]'
                   }`}>
                     {slide.title}
                   </h1>
-                  <div className="w-16 md:w-28 h-1 bg-yellow-400 mb-3 mx-auto md:ml-2.5"></div>
-                  <p className="font-alkes text-base md:text-2xl text-[#000] leading-relaxed">
+                  <div className="w-16 md:w-28 h-1 bg-yellow-400 -mb-4 mx-auto md:ml-2"></div>
+                  <p className="font-alkes text-base md:text-2xl text-[#000] leading-relaxed pt-4">
                     {slide.description}
                   </p>
                 </div>
