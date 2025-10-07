@@ -5,7 +5,7 @@ const AboutInfo = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="  ">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 font-makozin">
+          <h2 className="text-3xl md:text-4xl font-medium text-gray-800 mb-6 font-makozin">
             About RSA
           </h2>
 

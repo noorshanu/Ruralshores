@@ -1,17 +1,18 @@
 import React from 'react'
 import Image from 'next/image'
+import { BsLinkedin } from 'react-icons/bs'
 
 const NeerajCeo = () => {
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-4 bg-gray-50 rounded-2xl">
-        <div className="max-w-4xl mx-auto">
+      <div className="container mx-auto px-4 bg-gray-50 rounded-2xl  h-[330px]">
+        <div className="max-w-3xl mx-auto">
       
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center ">
             {/* CEO Image */}
             <div className="relative">
-              <div className="relative rounded-lg overflow-hidden shadow-lg">
+              <div className=" rounded-lg overflow-hidden shadow-lg absolute">
                 <Image
                   src="/neerajceo.jpg"
                   alt="Neeraj - CEO"
@@ -32,19 +33,7 @@ const NeerajCeo = () => {
               </p>
               
               <div className="space-y-4 text-gray-700 leading-relaxed">
-                <p>
-                  As the CEO of Rural Shores, Neeraj brings visionary leadership and extensive 
-                  experience in community development and social impact initiatives.
-                </p>
-                <p>
-                  Under his guidance, Rural Shores has grown to become a leading organization 
-                  in transforming communities through innovative training, monitoring, and 
-                  auditing solutions.
-                </p>
-                <p>
-                  His commitment to excellence and sustainable development drives our mission 
-                  to create meaningful impact across diverse communities.
-                </p>
+          <BsLinkedin/>
               </div>
             </div>
           </div>
