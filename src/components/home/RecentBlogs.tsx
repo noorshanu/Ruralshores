@@ -1,22 +1,46 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const RecentBlogs = () => {
   return (
     <section className="py-6 ">
       <div className=" mx-auto ">
         {/* Section Title */}
-        <div className="text-center mb-12 max-w-sm mx-auto">
+        <motion.div
+          initial={{ y: -30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ 
+            type: "spring",
+            stiffness: 80,
+            damping: 20,
+            duration: 1
+          }}
+          className="text-center mb-12 max-w-sm mx-auto"
+        >
           <h2 className="text-4xl font-alkes font-medium text-[#F76C5E] mb-2">Recent Blogs Posts</h2>
           <div className="w-18 h-1 bg-yellow-400 ml-11  "></div>
-        </div>
+        </motion.div>
 
         {/* Main Content Area */}
         <div className="bg-[#f5f2f3] py-2 ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
             {/* Left Section - Visual Content */}
-            <div className="w-full">
+            <motion.div
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ 
+                type: "spring",
+                stiffness: 80,
+                damping: 20,
+                duration: 1
+              }}
+              className="w-full"
+            >
               <div className="relative w-full h-[450px] rounded-r-3xl overflow-hidden">
                 <Image 
                   src="/blog.jpg" 
@@ -26,10 +50,22 @@ const RecentBlogs = () => {
                   priority={true}
                 />
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Section - Text and Call-to-Action */}
-            <div className="text-center lg:text-left space-y-4">
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ 
+                type: "spring",
+                stiffness: 80,
+                damping: 20,
+                duration: 1,
+                delay: 0.2
+              }}
+              className="text-center lg:text-left space-y-4"
+            >
               <h3 className="text-3xl text-center sm:text-4xl font-bold font-makozin text-[#F76C5E]">
                 From Our Desk- to Yours
               </h3>
@@ -43,7 +79,7 @@ const RecentBlogs = () => {
                   Know more
                 </button>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
