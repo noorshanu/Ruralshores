@@ -1,5 +1,7 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const HomeTestimonials = () => {
   const testimonials = [
@@ -26,19 +28,40 @@ const HomeTestimonials = () => {
   
 
       {/* Title Section */}
-      <div className="text-center mb-12">
+      <motion.div
+        initial={{ y: -30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ 
+          type: "spring",
+          stiffness: 80,
+          damping: 20,
+          duration: 1
+        }}
+        className="text-center mb-12"
+      >
         <h2 className="text-3xl md:text-4xl font-medium text-[#E75B4D] mb-2">
           Testimonials
         </h2>
         <div className="w-16 h-1 bg-[#FFD700] mx-auto"></div>
-      </div>
+      </motion.div>
 
       {/* Testimonials Grid */}
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {testimonials.map((testimonial, index) => (
-            <div 
+            <motion.div
               key={index}
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ 
+                type: "spring",
+                stiffness: 80,
+                damping: 20,
+                duration: 1,
+                delay: index * 0.2
+              }}
               className="bg-[#F8F8F8] border border-[#E75B4D] rounded-2xl p-6 text-center relative"
             >
               {/* Profile Image */}
@@ -65,16 +88,28 @@ const HomeTestimonials = () => {
               <p className="text-gray-700 italic text-sm leading-relaxed">
                 &quot;{testimonial.quote}&quot;
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* CTA Button */}
-        <div className="text-center">
+        <motion.div
+          initial={{ scale: 0, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ 
+            type: "spring",
+            stiffness: 80,
+            damping: 20,
+            duration: 1,
+            delay: 0.6
+          }}
+          className="text-center"
+        >
           <button className="bg-white border border-dotted border-gray-400 rounded-lg px-8 py-3 text-gray-800 hover:bg-gray-50 transition-colors">
             Click to see full reviews
           </button>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
