@@ -97,7 +97,17 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="hidden lg:block sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200">
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ 
+          type: "spring",
+          stiffness: 200,
+          damping: 25,
+          duration: 0.4
+        }}
+        className="hidden lg:block sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200"
+      >
         <div className=" mx-auto px-4 pb-2 pt-2 sm:px-12">
         
 
@@ -120,7 +130,10 @@ const Navbar: React.FC = () => {
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center space-x-8 ">
               {menuItems.map((item) => (
-                <div key={item.label} className="relative">
+                <div
+                  key={item.label}
+                  className="relative"
+                >
                   {item.dropdown ? (
                     <div
                       className="relative"
@@ -234,16 +247,29 @@ const Navbar: React.FC = () => {
               ))}
 
               {/* Contact Button */}
-              <a href="/contact-us" className="bg-[#dfad1f] border border-red-400 hover:bg-red-500 text-white px-6 py-2 rounded-full transition-colors font-bold">
+              <a
+                href="/contact-us"
+                className="bg-[#dfad1f] border border-red-400 hover:bg-red-500 text-white px-6 py-2 rounded-full transition-colors font-bold"
+              >
                 Contact us
               </a>
             </div>
           </div>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Mobile Navbar */}
-      <nav className="lg:hidden sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200">
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ 
+          type: "spring",
+          stiffness: 200,
+          damping: 25,
+          duration: 0.4
+        }}
+        className="lg:hidden sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Mobile Logo */}
@@ -428,7 +454,7 @@ const Navbar: React.FC = () => {
             />
           )}
         </AnimatePresence>
-      </nav>
+      </motion.nav>
     </>
   );
 };

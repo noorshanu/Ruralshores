@@ -1,5 +1,7 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const Vision = () => {
   return (
@@ -9,7 +11,18 @@ const Vision = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             
             {/* Our Vision Card */}
-            <div className="relative">
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ 
+                type: "spring",
+                stiffness: 80,
+                damping: 20,
+                duration: 1
+              }}
+              className="relative"
+            >
               {/* Icon Circle */}
               <div className="absolute -top-14 left-1/2 transform -translate-x-1/2 z-10">
               <Image src="/vision.png" alt="Vision" width={125} height={100} />
@@ -24,10 +37,22 @@ const Vision = () => {
                   The world&apos;s most trusted innovator of transformative training services that unlock success for each business.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Our Mission Card */}
-            <div className="relative">
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ 
+                type: "spring",
+                stiffness: 80,
+                damping: 20,
+                duration: 1,
+                delay: 0.2
+              }}
+              className="relative"
+            >
               {/* Icon Circle */}
               <div className="absolute -top-14 left-1/2 transform -translate-x-1/2 z-10">
               <Image src="/mission.png" alt="Vision" width={125} height={100} />
@@ -43,7 +68,7 @@ const Vision = () => {
                   Preparing youthful minds for success by fostering lifelong passion for growth
                 </p>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>

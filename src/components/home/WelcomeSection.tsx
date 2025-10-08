@@ -1,12 +1,25 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const WelcomeSection = () => {
   return (
     <section className="py-8 md:py-0">
       <div className="c">
         {/* Top Navigation Header */}
-        <div className="text-center my-6 md:my-8">
+        <motion.div
+          initial={{ y: -20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ 
+            type: "spring",
+            stiffness: 100,
+            damping: 20,
+            duration: 0.8
+          }}
+          className="text-center my-6 md:my-8"
+        >
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-black">
             <span className="font-medium text-lg md:text-[22px] font-alkes">Know Our Roots</span>
          
@@ -15,14 +28,25 @@ const WelcomeSection = () => {
             </div>
         
           </div>
-        </div>
+        </motion.div>
 
         {/* Main White Container */}
         <div className="w-full relative">
           <div className="flex flex-col lg:flex-row w-full items-center">
             
             {/* Left Section - Text Content */}
-            <div className="w-full lg:w-[56%] h-auto lg:h-[460px] bg-[#f5f2f3] rounded-none lg:rounded-r-[110px] lg:rounded-br-[110px] px-6 md:px-12 lg:px-22 py-8 md:py-12 lg:py-16" >
+            <motion.div
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ 
+                type: "spring",
+                stiffness: 80,
+                damping: 20,
+                duration: 1
+              }}
+              className="w-full lg:w-[56%] h-auto lg:h-[460px] bg-[#f5f2f3] rounded-none lg:rounded-r-[110px] lg:rounded-br-[110px] px-6 md:px-12 lg:px-22 py-8 md:py-12 lg:py-16"
+            >
               <div className=''>
                 <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-[#f56d5f] mb-2 font-alkes">
                   Welcome!
@@ -35,10 +59,22 @@ const WelcomeSection = () => {
                 <p>and supporting corporate growth with a</p>
                 <p>strong presence across India.</p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Section - Image */}
-            <div className="w-full lg:w-1/2 relative lg:absolute lg:right-0 z-20 mt-6 lg:mt-0">
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ 
+                type: "spring",
+                stiffness: 80,
+                damping: 20,
+                duration: 1,
+                delay: 0.3
+              }}
+              className="w-full lg:w-1/2 relative lg:absolute lg:right-0 z-20 mt-6 lg:mt-0"
+            >
               <div className="relative z-20">
                 <div className="relative w-full h-[300px] md:h-[400px]">
                   <Image 
@@ -49,7 +85,7 @@ const WelcomeSection = () => {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>

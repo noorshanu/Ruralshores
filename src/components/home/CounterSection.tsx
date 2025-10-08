@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import CountUp from 'react-countup'
+import { motion } from 'framer-motion'
 import { IoLocationOutline } from 'react-icons/io5'
 import { FiUsers } from 'react-icons/fi'
 import { PiGraduationCap } from 'react-icons/pi'
@@ -13,7 +14,19 @@ const CounterSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           
           {/* States Card */}
-          <div className="bg-gray-50 rounded-2xl p-6 text-center relative overflow-hidden">
+          <motion.div
+            initial={{ y: 80, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ 
+              type: "spring",
+              stiffness: 80,
+              damping: 20,
+              duration: 1,
+              delay: 0
+            }}
+            className="bg-gray-50 rounded-2xl p-6 text-center relative overflow-hidden"
+          >
             <div className="relative z-10">
               <div className="text-4xl md:text-5xl font-bold text-black mb-3 font-makozin">
                 <CountUp 
@@ -29,10 +42,22 @@ const CounterSection = () => {
               </div>
             </div>
             <div className="absolute bottom-0 left-0 right-0 h-3 bg-yellow-400  rounded-full   transform translate-y-1/2"></div>
-          </div>
+          </motion.div>
 
           {/* Trainers Card */}
-          <div className="bg-gray-50 rounded-2xl p-6 text-center relative overflow-hidden">
+          <motion.div
+            initial={{ y: 80, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ 
+              type: "spring",
+              stiffness: 80,
+              damping: 20,
+              duration: 1,
+              delay: 0.1
+            }}
+            className="bg-gray-50 rounded-2xl p-6 text-center relative overflow-hidden"
+          >
             <div className="relative z-10">
               <div className="text-4xl md:text-5xl font-bold text-black mb-3 font-makozin">
                 <CountUp 
@@ -48,10 +73,22 @@ const CounterSection = () => {
               </div>
             </div>
             <div className="absolute bottom-0 left-0 right-0 h-3 bg-orange-500 rounded-t-full transform translate-y-1/2"></div>
-          </div>
+          </motion.div>
 
           {/* Trained Card */}
-          <div className="bg-gray-50 rounded-2xl p-6 text-center relative overflow-hidden">
+          <motion.div
+            initial={{ y: 80, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ 
+              type: "spring",
+              stiffness: 80,
+              damping: 20,
+              duration: 1,
+              delay: 0.2
+            }}
+            className="bg-gray-50 rounded-2xl p-6 text-center relative overflow-hidden"
+          >
             <div className="relative z-10">
               <div className="text-4xl md:text-5xl font-bold text-black mb-3 font-makozin">
                 <CountUp 
@@ -68,10 +105,22 @@ const CounterSection = () => {
               </div>
             </div>
             <div className="absolute bottom-0 left-0 right-0 h-3 bg-yellow-400 rounded-t-full transform translate-y-1/2"></div>
-          </div>
+          </motion.div>
 
           {/* Placed Card */}
-          <div className="bg-gray-50 rounded-2xl p-6 text-center relative overflow-hidden">
+          <motion.div
+            initial={{ y: 80, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ 
+              type: "spring",
+              stiffness: 80,
+              damping: 20,
+              duration: 1,
+              delay: 0.3
+            }}
+            className="bg-gray-50 rounded-2xl p-6 text-center relative overflow-hidden"
+          >
             <div className="relative z-10">
               <div className="text-4xl md:text-5xl font-bold text-black mb-3 font-makozin">
                 <CountUp 
@@ -88,7 +137,7 @@ const CounterSection = () => {
               </div>
             </div>
             <div className="absolute bottom-0 left-0 right-0 h-3 bg-orange-500 rounded-t-full transform translate-y-1/2"></div>
-          </div>
+          </motion.div>
 
         </div>
       </div>
