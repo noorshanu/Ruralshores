@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
@@ -26,7 +27,7 @@ const GroupCeo = () => {
                   A master at forging lasting ties with CXOs and senior
                       influencers across telecom, government, industrials, energy,
                       banking, hospitality, and IT services, Tarun has transformed
-                      cost centers into profit centers through   innovations like   "Marketing as a Service" amongst many. 
+                      cost centers into profit centers through   innovations like   &quot;Marketing as a Service" amongst many. 
                 </p>
                 
                 {isExpanded && (
