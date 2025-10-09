@@ -39,9 +39,9 @@ const Founders = () => {
                     <Image
                       src={founder.image}
                       alt={founder.name}
-                      width={96}
-                      height={96}
-                      className="w-24 h-24 rounded-full border-2 border-gray-200 overflow-hidden bg-gray-200 mb-4"
+                      width={200}
+                      height={191}
+                      className="w-[204px] h-[191px] object-cover mb-4"
                     />
 
                     {/* Name and LinkedIn */}
