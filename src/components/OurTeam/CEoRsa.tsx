@@ -1,5 +1,6 @@
 import React from 'react'
-
+import Image from 'next/image'
+  
 
 const CEoRsa = () => {
   return (
@@ -15,15 +16,7 @@ const CEoRsa = () => {
                 <div className="relative mb-6">
                   <div className="w-full h-96 bg-gray-200 rounded-lg overflow-hidden shadow-lg">
                     {/* Placeholder for Neeraj Agarwal's image */}
-                    <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-32 h-32 bg-gray-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                          <span className="text-4xl font-bold text-white">NA</span>
-                        </div>
-                        <p className="text-gray-600 font-medium">Professional Portrait</p>
-                        <p className="text-sm text-gray-500">Neeraj Agarwal</p>
-                      </div>
-                    </div>
+             <Image src="/founder/neeraj.jpg" alt="Neeraj Agarwal" width={500} height={460} />
                   </div>
                 </div>
 
