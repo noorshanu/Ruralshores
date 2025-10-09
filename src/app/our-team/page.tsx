@@ -4,6 +4,7 @@ import Founders from '@/components/OurTeam/Founders'
 import GroupCeo from '@/components/OurTeam/GroupCeo'
 import CEoRsa from '@/components/OurTeam/CEoRsa'
 import CoreTeam from '@/components/OurTeam/CoreTeam'
+import OurPeople from '@/components/OurTeam/OurPeople'
 
 const page = () => {
   return (
@@ -13,6 +14,7 @@ const page = () => {
       <GroupCeo />
       <CEoRsa />
       <CoreTeam />
+      <OurPeople />
     </div>
   )
 }

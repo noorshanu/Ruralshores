@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const CEoRsa = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 ">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Main Content Section */}
@@ -62,15 +62,16 @@ const CEoRsa = () => {
           </div>
 
           {/* Bottom Section - Summary Statement */}
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center">
-              <p className="text-xl text-gray-800 leading-relaxed font-medium">
+         
+        </div>
+      </div>
+      <div className=" mx-auto bg-gray-50">
+            <div className="text-center container mx-auto px-[60px] py-8">
+              <p className="text-2xl text-gray-800 leading-relaxed font-medium font-makozin">
                 40 years on, Neeraj&apos;s through-line is clear: leverage technology and education to convert potential into prosperity—whether for industrial plants, enterprise learners, or rural youth.
               </p>
             </div>
           </div>
-        </div>
-      </div>
     </section>
   )
 }
