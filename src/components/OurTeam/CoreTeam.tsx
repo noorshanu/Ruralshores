@@ -8,8 +8,8 @@ const CoreTeam = () => {
       role: "Rooted in People | Rising in Business",
       description: "Sindhu has been a pillar of strength and strategy. As a trusted HR partner, she not only nurtured people but also pioneered a new business line-setting a benchmark for innovation and ownership.",
       image: "/coreteam/shindu.jpg",
-      imageWidth: 200,
-      imageHeight: 200,
+      imageWidth: 260,
+      imageHeight: 250,
       linkedin: "https://linkedin.com/in/sindhu-girish"
     },
     {
@@ -17,8 +17,8 @@ const CoreTeam = () => {
       role: "Grassroots Innovator | Skilling Visionary",
       description: "Starting as a field trainer, Praveen transformed classroom challenges into creative solutions. His grounded understanding of learner's needs now powers an entire business line under his leadership.",
       image: "/coreteam/parvin.jpg",
-      imageWidth: 200,
-      imageHeight: 200,
+      imageWidth: 260,
+      imageHeight: 250,
       linkedin: "https://linkedin.com/in/pravin-unde"
     }
   ]
@@ -49,7 +49,7 @@ const CoreTeam = () => {
                       alt={member.name}
                       width={member.imageWidth}
                       height={member.imageHeight}
-                      className="object-cover mb-4"
+                      className="object-cover  w-full rounded-t-xl"
                       style={{ width: `${member.imageWidth}px`, height: `${member.imageHeight}px` }}
                     />
 
