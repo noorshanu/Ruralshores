@@ -20,6 +20,24 @@ const CoreTeam = () => {
       imageWidth: 260,
       imageHeight: 250,
       linkedin: "https://linkedin.com/in/pravin-unde"
+    },
+    {
+      name: "Snehi Shabnam",
+      role: "Creative Strategist | Business Line Leader | Mentor at Heart",
+      description: "From penning her first training module to shaping three thriving business lines, Snehi blends creativity with sharp strategic vision. She leads with clarity, driving innovation across both design and delivery. Her leadership inspires teams to push boundaries and deliver with purpose.",
+      image: "/coreteam/snehi.jpg",
+      imageWidth: 260,
+      imageHeight: 250,
+      linkedin: "https://linkedin.com/in/pravin-unde"
+    },
+    {
+      name: "Sonal Arora",
+      role: "Learning Architect | Creative Powerhouse | Trainer at Heart",
+      description: "As a technologist and entrepreneur, Rajiv brings over two decades of experience in driving AI-powered solutions. His expertise spans AI, analytics, and digital transformation, driving efficiency and innovation across multiple business lines.",
+      image: "/coreteam/sonal.jpg",
+      imageWidth: 260,
+      imageHeight: 250,
+      linkedin: "https://linkedin.com/in/pravin-unde"
     }
   ]
 
