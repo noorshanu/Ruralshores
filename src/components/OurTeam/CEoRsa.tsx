@@ -1,22 +1,117 @@
+"use client";
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
   
 
 const CEoRsa = () => {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const leftVariants = {
+    hidden: { 
+      opacity: 0, 
+      x: -80,
+      scale: 0.9
+    },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        type: "spring",
+        stiffness: 100
+      }
+    }
+  };
+
+  const rightVariants = {
+    hidden: { 
+      opacity: 0, 
+      x: 80,
+      y: 30
+    },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const textVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 20
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const bottomVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 40
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        delay: 0.3
+      }
+    }
+  };
+
   return (
     <section className="py-16 ">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Main Content Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
+          <motion.div 
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             {/* Left Section - Image and Name */}
-            <div className="order-1 lg:order-1">
+            <motion.div 
+              className="order-1 lg:order-1"
+              variants={leftVariants}
+            >
               <div className="max-w-md mx-auto lg:mx-0">
                 {/* Profile Image */}
-                <div className="relative ">
+                <div className="relative">
                   <div className="w-full">
-                    {/* Placeholder for Neeraj Agarwal's image */}
-             <Image src="/founder/neeraj.jpg" alt="Neeraj Agarwal" width={430} height={313} className="w-full h-full object-cover rounded-t-xl" />
+                    <Image 
+                      src="/founder/neeraj.jpg" 
+                      alt="Neeraj Agarwal" 
+                      width={430} 
+                      height={313} 
+                      className="w-full h-full object-cover rounded-t-xl" 
+                    />
                   </div>
                 </div>
 
@@ -39,39 +134,61 @@ const CEoRsa = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Section - Descriptive Text Block */}
-            <div className="order-2 lg:order-2">
+            <motion.div 
+              className="order-2 lg:order-2"
+              variants={rightVariants}
+            >
               <div className="max-w-2xl">
-                <div className="space-y-6">
-                  <p className="text-gray-700 leading-relaxed text-lg">
+                <motion.div className="space-y-6">
+                  <motion.p 
+                    className="text-gray-700 leading-relaxed text-lg"
+                    variants={textVariants}
+                  >
                     At RuralShores Skills Academy (RSA), we believe in unlocking the potential of India&apos;s youth by bridging the gap between education and employment.
-                  </p>
+                  </motion.p>
                   
-                  <p className="text-gray-700 leading-relaxed text-lg">
+                  <motion.p 
+                    className="text-gray-700 leading-relaxed text-lg"
+                    variants={textVariants}
+                  >
                     Since joining RSA in 2013, after two decades with NIIT Ltd and an education at IIT Delhi, I&apos;ve seen firsthand how skills can transform lives and communities.
-                  </p>
+                  </motion.p>
                   
-                  <p className="text-gray-700 leading-relaxed text-lg">
+                  <motion.p 
+                    className="text-gray-700 leading-relaxed text-lg"
+                    variants={textVariants}
+                  >
                     Over the years, RSA has empowered millions across rural and underserved regions with the tools they need to succeed in today&apos;s economy. Alongside this, we&apos;ve partnered with corporates to build a skilled workforce aligned with business goals.
-                  </p>
-                </div>
+                  </motion.p>
+                </motion.div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Bottom Section - Summary Statement */}
          
         </div>
       </div>
-      <div className=" mx-auto bg-[#F5F2F3]">
-            <div className="text-center container mx-auto px-[60px] py-8">
-              <p className="text-2xl text-black leading-relaxed font-medium font-makozin">
-                40 years on, Neeraj&apos;s through-line is clear: leverage technology and education to convert potential into prosperity—whether for industrial plants, enterprise learners, or rural youth.
-              </p>
-            </div>
-          </div>
+      
+      <motion.div 
+        className="mx-auto bg-[#F5F2F3]"
+        variants={bottomVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="text-center container mx-auto px-[60px] py-8">
+          <motion.p 
+            className="text-2xl text-black leading-relaxed font-medium font-makozin"
+            variants={textVariants}
+          >
+            40 years on, Neeraj&apos;s through-line is clear: leverage technology and education to convert potential into prosperity—whether for industrial plants, enterprise learners, or rural youth.
+          </motion.p>
+        </div>
+      </motion.div>
     </section>
   )
 }

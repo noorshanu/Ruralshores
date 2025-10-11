@@ -1,7 +1,55 @@
+"use client";
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 const CoreTeam = () => {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const titleVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 30
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50,
+      scale: 0.9
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        type: "spring",
+        stiffness: 100
+      }
+    }
+  };
+
   const teamMembers = [
     {
       name: "Sindhu Girish",
@@ -46,16 +94,36 @@ const CoreTeam = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Title */}
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            variants={titleVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <h2 className="text-2xl font-makozin md:text-3xl font-medium text-black mb-4">
               Meet the Core Team
             </h2>
-          </div>
+          </motion.div>
 
           {/* Team Members Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <motion.div 
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {teamMembers.map((member, index) => (
-              <div key={index} className="relative max-w-md mx-auto lg:mx-0">
+              <motion.div 
+                key={index} 
+                className="relative max-w-md mx-auto lg:mx-0"
+                variants={cardVariants}
+                whileHover={{ 
+                  y: -10,
+                  transition: { duration: 0.3 }
+                }}
+              >
                 {/* Small Top Box - Image, Name, LinkedIn */}
                 <div 
                   className="relative z-20 bg-white rounded-2xl mb-4 w-[260px] mx-auto"
@@ -107,9 +175,9 @@ const CoreTeam = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
