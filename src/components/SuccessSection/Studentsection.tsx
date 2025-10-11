@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Studentsection = () => {
   return (
@@ -13,32 +13,33 @@ const Studentsection = () => {
         </div>
 
         {/* Testimonial Box with Background Image */}
-        <div 
-          className="relative my-10 mx-auto max-w-4xl bg-contain bg-no-repeat bg-center p-12 md:p-16 lg:p-20"
-          style={{ 
+        <div
+          className="relative  mx-auto max-w-4xl bg-contain bg-no-repeat bg-center  "
+          style={{
             backgroundImage: "url('/Peach-box.png')",
-            minHeight: '300px'
+            minHeight: "350px",
           }}
         >
           {/* Content Over Background */}
           <div className="relative z-10 space-y-6">
             <p className="text-base md:text-lg leading-relaxed text-gray-800">
-              I could not study further after passing 10th because my family&apos;s financial condition was not good. And I had to do labor work. But here I got training as an electrician in a short period of time. And they gave me a good job so that I became financially stable and today I can support my family financially.
+              I could not study further after passing 10th because my
+              family&apos;s financial condition was not good. And I had to do
+              labor work. But here I got training as an electrician in a short
+              period of time. And they gave me a good job so that I became
+              financially stable and today I can support my family financially.
             </p>
-            
-            <div className="pt-4">
+
+            <div className="pt-2">
               <p className="font-bold text-gray-900 text-lg md:text-xl">
-                Kuntal
-              </p>
-              <p className="text-gray-600 text-sm md:text-base">
-                (Electrician Trade Trainee)
+                Kuntal (Electrician Trade Trainee)
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Studentsection
+export default Studentsection;
