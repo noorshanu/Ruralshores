@@ -65,9 +65,9 @@ const CEoRsa = () => {
          
         </div>
       </div>
-      <div className=" mx-auto bg-gray-50">
+      <div className=" mx-auto bg-[#F5F2F3]">
             <div className="text-center container mx-auto px-[60px] py-8">
-              <p className="text-2xl text-gray-800 leading-relaxed font-medium font-makozin">
+              <p className="text-2xl text-black leading-relaxed font-medium font-makozin">
                 40 years on, Neeraj&apos;s through-line is clear: leverage technology and education to convert potential into prosperity—whether for industrial plants, enterprise learners, or rural youth.
               </p>
             </div>

@@ -4,15 +4,18 @@ import Image from 'next/image'
 
 const OurPeople = () => {
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Title */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-8">
+    <section className="py-16">
+      <div className="bg-[#F5F2F3] py-10">
+      <div className="text-center ">
+            <h2 className="sm:text-3xl text-xl text-black leading-relaxed font-medium font-makozin">
               Our Strength Lies in Our People
             </h2>
           </div>
+      </div>
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Title */}
+    
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Section - Team Photo */}

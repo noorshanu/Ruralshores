@@ -89,7 +89,7 @@ const GroupCeo = () => {
                     href="https://linkedin.com/in/tarun-singhal"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:text-blue-800 transition-colors"
+                    className="text-[#1A63BC] hover:text-blue-800 transition-colors"
                   >
                     <svg
                       className="w-5 h-5"

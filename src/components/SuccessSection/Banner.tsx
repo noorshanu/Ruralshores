@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Banner = () => {
   return (
-    <section className="relative min-h-[450px] flex items-center overflow-hidden">
+    <section className="relative min-h-[550px] flex items-center overflow-hidden">
       {/* Background with decorative icons */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -13,8 +13,6 @@ const Banner = () => {
       >
  
        
-        
-  
       
       </div>
 
@@ -22,13 +20,14 @@ const Banner = () => {
         {/* Left Section - Text Content */}
         <div className="text-left">
           <h1 className="text-4xl md:text-6xl font-alkes font-medium text-[#E75B4D] mb-4">
-          Our Team
+          Success Stories
           </h1>
-          <div className="w-16 h-2 bg-[#FFD700] mb-8"></div>
+          <div className="w-28 h-2 bg-[#FFD700] mb-8"></div>
           
           <div className="space-y-2 text-lg md:text-3xl text-gray-800 font-medium font-makozin">
-            <p>Powered by Passion. United </p>
-            <p>by Purpose.</p>
+            <p>Voices that power our
+            purpose. </p>
+           
           </div>
         </div>
 
@@ -40,11 +39,11 @@ const Banner = () => {
             {/* Main image */}
             <div className="relative z-0 rounded-lg overflow-hidden">
               <Image
-                src="/team.png"
+                src="/story.png"
                 alt="About Us - Team working together"
                 width={500}
                 height={400}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto "
                 priority
               />
             </div>

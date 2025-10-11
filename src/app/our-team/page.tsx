@@ -5,6 +5,7 @@ import GroupCeo from '@/components/OurTeam/GroupCeo'
 import CEoRsa from '@/components/OurTeam/CEoRsa'
 import CoreTeam from '@/components/OurTeam/CoreTeam'
 import OurPeople from '@/components/OurTeam/OurPeople'
+import TeamSider from '@/components/OurTeam/TeamSider'
 
 const page = () => {
   return (
@@ -15,6 +16,7 @@ const page = () => {
       <CEoRsa />
       <CoreTeam />
       <OurPeople />
+      <TeamSider />
     </div>
   )
 }

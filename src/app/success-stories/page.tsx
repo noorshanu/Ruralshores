@@ -1,8 +1,13 @@
+import Banner from '@/components/SuccessSection/Banner'
+import ClientTesto from '@/components/SuccessSection/ClientTesto'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+      <Banner />
+      <ClientTesto />
+    </div>
   )
 }
 
