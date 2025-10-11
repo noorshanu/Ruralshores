@@ -30,8 +30,8 @@ const Founders = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2
+        staggerChildren: 0.4,
+        delayChildren: 0.3
       }
     }
   };
@@ -43,30 +43,33 @@ const Founders = () => {
     },
     visible: { 
       opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
+      y: 0
     }
   };
 
-  const cardVariants = {
+  const leftCardVariants = {
     hidden: { 
       opacity: 0, 
-      x: (index: number) => index === 0 ? -100 : 100,
+      x: -100,
       scale: 0.8
     },
     visible: { 
       opacity: 1, 
       x: 0,
-      scale: 1,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-        type: "spring",
-        stiffness: 100
-      }
+      scale: 1
+    }
+  };
+
+  const rightCardVariants = {
+    hidden: { 
+      opacity: 0, 
+      x: 100,
+      scale: 0.8
+    },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      scale: 1
     }
   };
 
@@ -99,8 +102,8 @@ const Founders = () => {
               <motion.div 
                 key={index} 
                 className="relative max-w-md mx-auto lg:mx-0"
-                variants={cardVariants}
-                custom={index}
+                variants={index === 0 ? leftCardVariants : rightCardVariants}
+                transition={{ duration: 1.5, ease: "easeOut", type: "spring", stiffness: 50 }}
               >
                 {/* Small Top Box - Image, Name, LinkedIn */}
                 <div 

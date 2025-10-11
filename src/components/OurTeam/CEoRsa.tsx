@@ -11,8 +11,8 @@ const CEoRsa = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
+        staggerChildren: 0.3,
+        delayChildren: 0.3
       }
     }
   };
@@ -20,36 +20,26 @@ const CEoRsa = () => {
   const leftVariants = {
     hidden: { 
       opacity: 0, 
-      x: -80,
-      scale: 0.9
+      x: -60,
+      scale: 0.95
     },
     visible: { 
       opacity: 1, 
       x: 0,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-        type: "spring",
-        stiffness: 100
-      }
+      scale: 1
     }
   };
 
   const rightVariants = {
     hidden: { 
       opacity: 0, 
-      x: 80,
-      y: 30
+      x: 60,
+      y: 20
     },
     visible: { 
       opacity: 1, 
       x: 0,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
+      y: 0
     }
   };
 
@@ -60,27 +50,18 @@ const CEoRsa = () => {
     },
     visible: { 
       opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
+      y: 0
     }
   };
 
   const bottomVariants = {
     hidden: { 
       opacity: 0, 
-      y: 40
+      y: 30
     },
     visible: { 
       opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-        delay: 0.3
-      }
+      y: 0
     }
   };
 
@@ -100,6 +81,7 @@ const CEoRsa = () => {
             <motion.div 
               className="order-1 lg:order-1"
               variants={leftVariants}
+              transition={{ duration: 1.2, ease: "easeOut", type: "spring", stiffness: 50 }}
             >
               <div className="max-w-md mx-auto lg:mx-0">
                 {/* Profile Image */}
@@ -140,6 +122,7 @@ const CEoRsa = () => {
             <motion.div 
               className="order-2 lg:order-2"
               variants={rightVariants}
+              transition={{ duration: 1.2, ease: "easeOut" }}
             >
               <div className="max-w-2xl">
                 <motion.div className="space-y-6">
@@ -173,13 +156,14 @@ const CEoRsa = () => {
         </div>
       </div>
       
-      <motion.div 
-        className="mx-auto bg-[#F5F2F3]"
-        variants={bottomVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
+          <motion.div 
+            className="mx-auto bg-[#F5F2F3]"
+            variants={bottomVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
+          >
         <div className="text-center container mx-auto px-[60px] py-8">
           <motion.p 
             className="text-2xl text-black leading-relaxed font-medium font-makozin"

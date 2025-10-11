@@ -64,7 +64,7 @@ const MarqueNew = () => {
         gradient={false}
         pauseOnHover={true}
       >
-        {marqueeData.map((item, index) => (
+        {marqueeData.map((item) => (
           <div key={item.id} className="mx-4">
             <a 
               href={item.link}

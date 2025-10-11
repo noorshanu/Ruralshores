@@ -11,8 +11,8 @@ const OurPeople = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
+        staggerChildren: 0.3,
+        delayChildren: 0.3
       }
     }
   };
@@ -24,11 +24,7 @@ const OurPeople = () => {
     },
     visible: { 
       opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
+      y: 0
     }
   };
 
@@ -41,13 +37,7 @@ const OurPeople = () => {
     visible: { 
       opacity: 1, 
       x: 0,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-        type: "spring",
-        stiffness: 80
-      }
+      scale: 1
     }
   };
 
@@ -60,11 +50,7 @@ const OurPeople = () => {
     visible: { 
       opacity: 1, 
       x: 0,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
+      y: 0
     }
   };
 
@@ -75,11 +61,7 @@ const OurPeople = () => {
     },
     visible: { 
       opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
+      y: 0
     }
   };
 
@@ -91,6 +73,7 @@ const OurPeople = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1, ease: "easeOut" }}
       >
         <div className="text-center">
           <motion.h2 
@@ -115,6 +98,7 @@ const OurPeople = () => {
             <motion.div 
               className="order-1 lg:order-1"
               variants={leftVariants}
+              transition={{ duration: 1.2, ease: "easeOut", type: "spring", stiffness: 50 }}
             >
               <div className="relative">
                 <Image
@@ -131,6 +115,7 @@ const OurPeople = () => {
             <motion.div 
               className="order-2 lg:order-2"
               variants={rightVariants}
+              transition={{ duration: 1.2, ease: "easeOut" }}
             >
               <div className="max-w-2xl mx-auto lg:mx-0">
                 <motion.div className="space-y-6">

@@ -10,8 +10,8 @@ const CoreTeam = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
+        staggerChildren: 0.3,
+        delayChildren: 0.3
       }
     }
   };
@@ -23,30 +23,20 @@ const CoreTeam = () => {
     },
     visible: { 
       opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
+      y: 0
     }
   };
 
   const cardVariants = {
     hidden: { 
       opacity: 0, 
-      y: 50,
-      scale: 0.9
+      y: 40,
+      scale: 0.95
     },
     visible: { 
       opacity: 1, 
       y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-        type: "spring",
-        stiffness: 100
-      }
+      scale: 1
     }
   };
 
@@ -100,6 +90,7 @@ const CoreTeam = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1, ease: "easeOut" }}
           >
             <h2 className="text-2xl font-makozin md:text-3xl font-medium text-black mb-4">
               Meet the Core Team
@@ -119,6 +110,7 @@ const CoreTeam = () => {
                 key={index} 
                 className="relative max-w-md mx-auto lg:mx-0"
                 variants={cardVariants}
+                transition={{ duration: 1.2, ease: "easeOut", type: "spring", stiffness: 50 }}
                 whileHover={{ 
                   y: -10,
                   transition: { duration: 0.3 }

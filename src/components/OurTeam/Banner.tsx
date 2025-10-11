@@ -10,8 +10,8 @@ const Banner = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
+        staggerChildren: 0.3,
+        delayChildren: 0.3
       }
     }
   };
@@ -25,11 +25,7 @@ const Banner = () => {
     visible: { 
       opacity: 1, 
       x: 0,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
+      y: 0
     }
   };
 
@@ -42,13 +38,7 @@ const Banner = () => {
     visible: { 
       opacity: 1, 
       x: 0,
-      scale: 1,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-        type: "spring",
-        stiffness: 80
-      }
+      scale: 1
     }
   };
 
@@ -59,11 +49,7 @@ const Banner = () => {
     },
     visible: { 
       opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
+      y: 0
     }
   };
 
@@ -88,6 +74,7 @@ const Banner = () => {
         <motion.div 
           className="text-left"
           variants={textVariants}
+          transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <motion.h1 
             className="text-4xl md:text-6xl font-alkes font-medium text-[#E75B4D] mb-4"
@@ -114,6 +101,7 @@ const Banner = () => {
         <motion.div 
           className="relative flex justify-center lg:justify-end"
           variants={imageVariants}
+          transition={{ duration: 1.5, ease: "easeOut", type: "spring", stiffness: 50 }}
         >
           <div className="relative w-full">
             <div className="relative z-0 rounded-lg overflow-hidden">
