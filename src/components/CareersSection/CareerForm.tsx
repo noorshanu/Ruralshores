@@ -35,19 +35,19 @@ const CareerForm = () => {
   }
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="pb-16 pt-8 bg-[#f5f5f5] rounded-[50px] mb-16">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 ">
             {/* Left Section - Promotional Text */}
             <div className="order-2 lg:order-1">
               <div className="max-w-lg">
-                <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                <p className="text-gray-700 text-2xl leading-relaxed mb-8">
                   Be a Part of a growing company as it offers endless opportunities to not just grow but transform yourselves.
                 </p>
                 
-                <h2 className="text-4xl md:text-5xl font-bold">
-                  <span className="text-gray-800">Your Work Here </span>
+                <h2 className="text-4xl md:text-6xl font-makozin">
+                  <span className="text-gray-800">Your Work <br /> Here </span>
                   <span className="text-[#E75B4D]">Matters</span>
                 </h2>
               </div>
