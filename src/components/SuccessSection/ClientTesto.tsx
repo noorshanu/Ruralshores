@@ -139,7 +139,7 @@ const ClientTesto = () => {
         }
       `}</style>
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#f5f5f5]">
         <div className="container mx-auto px-4">
           {/* Section Title */}
           <div className="text-center mb-12">
