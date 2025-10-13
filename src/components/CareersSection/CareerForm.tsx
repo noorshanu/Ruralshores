@@ -42,13 +42,13 @@ const CareerForm = () => {
             {/* Left Section - Promotional Text */}
             <div className="order-2 lg:order-1">
               <div className="max-w-lg">
-                <p className="text-gray-700 text-2xl leading-relaxed mb-8">
+                <p className="text-gray-700 text-xl sm:text-[26px] leading-relaxed font-makozin mb-8">
                   Be a Part of a growing company as it offers endless opportunities to not just grow but transform yourselves.
                 </p>
                 
-                <h2 className="text-4xl md:text-6xl font-makozin">
+                <h2 className="text-4xl md:text-6xl font-makozin font-medium">
                   <span className="text-gray-800">Your Work <br /> Here </span>
-                  <span className="text-[#E75B4D]">Matters</span>
+                  <span className="text-[#f66b5e]">Matters</span>
                 </h2>
               </div>
             </div>
@@ -56,7 +56,7 @@ const CareerForm = () => {
             {/* Right Section - Application Form */}
             <div className="order-1 lg:order-2">
               <div className="max-w-lg mx-auto lg:mx-0">
-                <h3 className="text-2xl font-bold text-gray-800 mb-8">
+                <h3 className="text-xl  font-makozin  text-gray-800 mb-4">
                   Join our team!
                 </h3>
 
@@ -69,7 +69,7 @@ const CareerForm = () => {
                       placeholder="Your name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:border-[#E75B4D] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-full border border-black focus:border-[#E75B4D] focus:outline-none transition-colors text-black bg-white"
                       required
                     />
                   </div>
@@ -82,7 +82,7 @@ const CareerForm = () => {
                       placeholder="Email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:border-[#E75B4D] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-full border border-black focus:border-[#E75B4D] focus:outline-none transition-colors text-black bg-white"
                       required
                     />
                   </div>
@@ -95,7 +95,7 @@ const CareerForm = () => {
                       placeholder="City"
                       value={formData.city}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:border-[#E75B4D] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-full border border-black focus:border-[#E75B4D] focus:outline-none transition-colors text-black bg-white"
                       required
                     />
                   </div>
@@ -106,7 +106,7 @@ const CareerForm = () => {
                       name="position"
                       value={formData.position}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:border-[#E75B4D] focus:outline-none transition-colors appearance-none bg-white"
+                      className="w-full px-4 py-3 rounded-full border border-black focus:border-[#E75B4D] focus:outline-none transition-colors appearance-none bg-white text-black"
                       required
                     >
                       <option value="">Choose desired position</option>
@@ -129,7 +129,7 @@ const CareerForm = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={4}
-                      className="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:border-[#E75B4D] focus:outline-none transition-colors resize-none"
+                      className="w-full px-4 py-3 rounded-2xl border border-black focus:border-[#E75B4D] focus:outline-none transition-colors resize-none text-black bg-white"
                     />
                   </div>
 
@@ -144,7 +144,7 @@ const CareerForm = () => {
                         className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                         accept=".pdf,.doc,.docx"
                       />
-                      <div className="w-full px-4 py-3 rounded-2xl border border-gray-300 bg-white flex items-center justify-between">
+                      <div className="w-full px-4 py-3 rounded-full border border-black bg-white flex items-center justify-between text-black">
                         <span className="text-gray-500">
                           {formData.file ? formData.file.name : 'Choose file'}
                         </span>
@@ -159,7 +159,7 @@ const CareerForm = () => {
                   <div>
                     <button
                       type="submit"
-                      className="w-full bg-[#E75B4D] hover:bg-[#D54A3A] text-white font-bold py-3 px-6 rounded-2xl transition-colors duration-300"
+                      className=" bg-[#f66b5e] hover:bg-[#D54A3A] text-white text-xl py-2 px-12 font-makozin rounded-xl transition-colors duration-300"
                     >
                       Submit
                     </button>

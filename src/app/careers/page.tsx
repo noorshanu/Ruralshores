@@ -7,7 +7,7 @@ const page = () => {
     <div>
       <Banner />
       <div className="container mx-auto px-4 py-14">
-        <h2 className="text-xl md:text-2xl  text-black mb-4 font-makozin">
+        <h2 className="text-xl md:text-[26px]  text-black mb-4 font-makozin">
           By 2030, RuralShores Skills Academy will be India’s definitive
           ‘find-train-track’ infrastructure—touching one million learners a
           year, serving 250 corporates, and covering every district in the
@@ -16,6 +16,19 @@ const page = () => {
         </h2>
       </div>
       <CareerForm />
+
+      <div className="container mx-auto px-10 py-14">
+        <h2 className="text-xl md:text-[26px]  text-black mb-4 font-makozin text-center">
+        We’re not building an organization. <br />
+        We’re building a future — rural, inclusive, skilled, and ready.
+        </h2>
+      </div>
+
+      <div className="bg-[#f5f5f5] px-4 py-14 mb-12">
+        <h2 className="text-xl md:text-[26px]  text-black mb-4 font-makozin text-center">
+        Come, be a part of a growing company that offers not just a career, but a chance to transform yourself and others
+        </h2>
+      </div>
     </div>
   );
 };
