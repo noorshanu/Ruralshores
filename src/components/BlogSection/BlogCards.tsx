@@ -1,125 +1,108 @@
 import React from 'react'
+import Image from 'next/image'
 
+type WpPost = {
+  id: number
+  slug: string
+  title: { rendered: string }
+  excerpt: { rendered: string }
+  date: string
+  _embedded?: {
+    'wp:featuredmedia'?: Array<{ source_url?: string }>
+    author?: Array<{ name?: string }>
+  }
+}
 
-const BlogCards = () => {
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Four Ways to Make CSR Drive Real Business Value",
-      description: "CSR is not just a responsibility-it's an investment in long-term business growth. While many see CSR as a compliance or goodwill exercise, the most effective leaders embrace it with clear",
-      author: "Sonal Arora",
-      image: "/blog-csr-business.jpg", // You'll need to add this image
-      readMoreLink: "/blog/four-ways-csr-business-value"
-    },
-    {
-      id: 2,
-      title: "5 Reasons Why Soft Skills are Now a Hard Business Metric?",
-      description: "HR: \"You were one of our best performers... why are you leaving?\" Employee: \"I never felt heard. My ideas were brushed aside. My manager didn't know how to talk, only",
-      author: "Sonal Arora", 
-      image: "/blog-soft-skills.jpg", // You'll need to add this image
-      readMoreLink: "/blog/soft-skills-business-metric"
-    },
-    {
-      id: 3,
-      title: "The Future is Skill-Based: 3 CSR-Driven Shifts from Degrees to Digital Badges.",
-      description: "The traditional four-year degree, once the undisputed gold standard of employability, is experiencing a profound transformation. In an era demanding agility, specialized skills, and continuous learning, a new currency is",
-      author: "Sonal Arora",
-      image: "/blog-skill-based-future.jpg", // You'll need to add this image
-      readMoreLink: "/blog/skill-based-future-digital-badges"
-    }
-  ]
+const WP_BASE = 'https://www.ruralshoresskillsacademy.com'
+
+async function fetchPosts(): Promise<WpPost[]> {
+  const url = new URL('/wp-json/wp/v2/posts', WP_BASE)
+  url.searchParams.set('_embed', '')
+  url.searchParams.set('per_page', '6')
+  url.searchParams.set('_fields', 'id,slug,title,excerpt,date,_links,_embedded')
+  const res = await fetch(url.toString(), { next: { revalidate: 3600 } })
+  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+  return res.json()
+}
+
+export default async function BlogCards() {
+  const posts = await fetchPosts()
+  const stripHtml = (html: string) => html.replace(/<[^>]*>/g, '')
 
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <article key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                {/* Blog Tag */}
-                <div className="relative">
-                  <div className="absolute top-4 right-4 z-10">
-                    <span className="bg-[#E75B4D] text-white px-3 py-1 rounded-full text-sm font-medium">
-                      BLOG
-                    </span>
-                  </div>
-                  
-                  {/* Featured Image */}
-                  <div className="relative h-48 w-full">
-                    <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                      {/* Placeholder for blog image */}
-                      <div className="text-center">
-                        <div className="w-16 h-16 bg-gray-400 rounded-full mx-auto mb-2 flex items-center justify-center">
-                          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                          </svg>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post) => {
+              const featured: string | undefined = post._embedded?.['wp:featuredmedia']?.[0]?.source_url
+              const author: string | undefined = post._embedded?.author?.[0]?.name
+              return (
+                <article key={post.id} className="relative overflow-hidden rounded-lg bg-white shadow-lg transition-shadow duration-300 hover:shadow-xl">
+                  {/* Blog Tag */}
+                  <div className="relative">
+                    <div className="absolute right-4 top-4 z-10">
+                      <span className="rounded-full bg-[#E75B4D] px-3 py-1 text-sm font-medium text-white">BLOG</span>
+                    </div>
+
+                    {/* Featured Image */}
+                    <div className="relative h-48 w-full bg-gray-200">
+                      {featured ? (
+                        <Image src={featured} alt="" fill className="object-cover" />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center text-center">
+                          <div>
+                            <div className="mx-auto mb-2 flex h-16 w-16 items-center justify-center rounded-full bg-gray-400">
+                              <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                              </svg>
+                            </div>
+                            <p className="text-sm text-gray-600">Blog Image</p>
+                          </div>
                         </div>
-                        <p className="text-gray-600 text-sm">Blog Image</p>
-                      </div>
-                    </div>
-                    
-                    {/* Author Profile Picture */}
-                    <div className="absolute bottom-0 left-4 transform translate-y-1/2">
-                      <div className="w-12 h-12 bg-gray-300 rounded-full border-4 border-white flex items-center justify-center">
-                        <span className="text-sm font-bold text-gray-600">SA</span>
+                      )}
+
+                      {/* Author initials */}
+                      <div className="absolute bottom-0 left-4 translate-y-1/2 transform">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full border-4 border-white bg-gray-300">
+                          <span className="text-sm font-bold text-gray-600">
+                            {(author || 'SA')
+                              .split(' ')
+                              .map((s) => s[0])
+                              .join('')}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Content */}
-                <div className="p-6 pt-8">
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-gray-800 mb-3 leading-tight">
-                    {post.title}
-                  </h3>
+                  {/* Content */}
+                  <div className="p-6 pt-8">
+                    <h3
+                      className="mb-3 text-xl font-bold leading-tight text-gray-800"
+                      dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+                    />
+                    <p className="mb-4 line-clamp-4 text-sm text-gray-600">{stripHtml(post.excerpt.rendered)}</p>
 
-                  {/* Description */}
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    {post.description}
-                  </p>
-
-                  {/* Read More Link */}
-                  <div className="flex items-center justify-between">
-                    <a
-                      href={post.readMoreLink}
-                      className="text-[#E75B4D] hover:text-[#D54A3A] font-medium text-sm flex items-center gap-1 transition-colors"
-                    >
-                      READ MORE
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-
-                    {/* Author */}
-                    <span className="text-[#E75B4D] text-sm font-medium">
-                      {post.author}
-                    </span>
+                    <div className="flex items-center justify-between">
+                      <a
+                        href={`/blog/${post.slug}`}
+                        className="flex items-center gap-1 text-sm font-medium text-[#E75B4D] transition-colors hover:text-[#D54A3A]"
+                      >
+                        READ MORE
+                        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                      <span className="text-sm font-medium text-[#E75B4D]">{author || 'RSA'}</span>
+                    </div>
                   </div>
-                </div>
-
-                {/* Decorative Elements for Third Card */}
-                {post.id === 3 && (
-                  <>
-                    <div className="absolute top-20 right-4 flex flex-col gap-1">
-                      <div className="w-2 h-1 bg-gray-400 rounded-full"></div>
-                      <div className="w-2 h-1 bg-gray-400 rounded-full"></div>
-                      <div className="w-2 h-1 bg-gray-400 rounded-full"></div>
-                    </div>
-                    <div className="absolute bottom-32 left-4 flex flex-col gap-1">
-                      <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
-                      <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
-                      <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
-                    </div>
-                  </>
-                )}
-              </article>
-            ))}
+                </article>
+              )
+            })}
           </div>
         </div>
       </div>
     </section>
   )
 }
-
-export default BlogCards
