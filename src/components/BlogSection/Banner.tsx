@@ -16,15 +16,14 @@ const Banner = () => {
       <div className="relative z-10 container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ">
         {/* Left Section - Text Content */}
         <div className="text-left">
-          <h1 className="text-4xl sm:text-4xl font-medium text-[#E75B4D] mb-1 font-alkes">
-          Frequently
-          Asked Questions
+          <h1 className="text-4xl sm:text-6xl font-medium text-[#E75B4D] mb-1 font-alkes">
+        
+Blogs
           </h1>
           <div className="w-24 h-2 bg-[#FFD700] mb-3"></div>
           
           <div className="space-y-2 text-lg md:text-3xl font-makozin text-gray-800 font-medium">
-            <p>If you want to know anything, <br />
-            inquire us.</p>
+            <p>Stories. Skills. Success.</p>
          
           
           </div>
@@ -38,7 +37,7 @@ const Banner = () => {
             {/* Main image */}
             <div className="relative z-0 rounded-lg overflow-hidden">
               <Image
-                src="/faq.png"
+                src="/blogbanner.png"
                 alt="About Us - Team working together"
                 width={400}
                 height={300}

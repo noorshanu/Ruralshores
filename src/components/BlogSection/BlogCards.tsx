@@ -1,5 +1,6 @@
 import React from 'react'
 import BlogImage from './BlogImage'
+import Link from 'next/link'
 
 type WpPost = {
   id: number
@@ -15,22 +16,25 @@ type WpPost = {
 
 const WP_BASE = 'https://www.ruralshoresskillsacademy.com'
 
-async function fetchPosts(): Promise<WpPost[]> {
+async function fetchPosts(page = 1, perPage = 6): Promise<{ posts: WpPost[]; totalPages: number }> {
   const url = new URL('/wp-json/wp/v2/posts', WP_BASE)
   url.searchParams.set('_embed', '')
-  url.searchParams.set('per_page', '6')
+  url.searchParams.set('per_page', String(perPage))
+  url.searchParams.set('page', String(page))
   url.searchParams.set('_fields', 'id,slug,title,excerpt,date,_links,_embedded')
-  const res = await fetch(url.toString(), { next: { revalidate: 3600 } })
+  const res = await fetch(url.toString(), { next: { revalidate: 300 } })
   if (!res.ok) throw new Error(`HTTP ${res.status}`)
-  return res.json()
+  const posts = await res.json()
+  const totalPages = Number(res.headers.get('X-WP-TotalPages') || '1')
+  return { posts, totalPages }
 }
 
-export default async function BlogCards() {
-  const posts = await fetchPosts()
+export default async function BlogCards({ page = 1, perPage = 6 }: { page?: number; perPage?: number }) {
+  const { posts, totalPages } = await fetchPosts(page, perPage)
   const stripHtml = (html: string) => html.replace(/<[^>]*>/g, '')
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 ">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -72,7 +76,7 @@ export default async function BlogCards() {
                     <p className="mb-4 line-clamp-4 text-sm text-gray-600">{stripHtml(post.excerpt.rendered)}</p>
 
                     <div className="flex items-center justify-between">
-                      <a
+                      <Link
                         href={`/blog/${post.slug}`}
                         className="flex items-center gap-1 text-sm font-medium text-[#E75B4D] transition-colors hover:text-[#D54A3A]"
                       >
@@ -80,7 +84,7 @@ export default async function BlogCards() {
                         <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
-                      </a>
+                      </Link>
                       <span className="text-sm font-medium text-[#E75B4D]">{author || 'RSA'}</span>
                     </div>
                   </div>
@@ -88,6 +92,30 @@ export default async function BlogCards() {
               )
             })}
           </div>
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="mt-10 flex items-center justify-center gap-2">
+              <Link
+                href={`/blog?page=${Math.max(1, page - 1)}`}
+                aria-disabled={page === 1}
+                className={`rounded-md px-3 py-2 text-sm font-medium ${
+                  page === 1 ? 'pointer-events-none opacity-40' : 'bg-gray-100 hover:bg-gray-200'
+                }`}
+              >
+                Previous
+              </Link>
+              <span className="text-sm text-gray-600">Page {page} of {totalPages}</span>
+              <Link
+                href={`/blog?page=${Math.min(totalPages, page + 1)}`}
+                aria-disabled={page >= totalPages}
+                className={`rounded-md px-3 py-2 text-sm font-medium ${
+                  page >= totalPages ? 'pointer-events-none opacity-40' : 'bg-gray-100 hover:bg-gray-200'
+                }`}
+              >
+                Next
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </section>
