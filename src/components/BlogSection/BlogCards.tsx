@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import BlogImage from './BlogImage'
 
 type WpPost = {
   id: number
@@ -47,20 +47,7 @@ export default async function BlogCards() {
 
                     {/* Featured Image */}
                     <div className="relative h-48 w-full bg-gray-200">
-                      {featured ? (
-                        <Image src={featured} alt="" fill className="object-cover" />
-                      ) : (
-                        <div className="flex h-full w-full items-center justify-center text-center">
-                          <div>
-                            <div className="mx-auto mb-2 flex h-16 w-16 items-center justify-center rounded-full bg-gray-400">
-                              <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                              </svg>
-                            </div>
-                            <p className="text-sm text-gray-600">Blog Image</p>
-                          </div>
-                        </div>
-                      )}
+                      <BlogImage src={featured} alt="Blog image" fill className="object-cover" />
 
                       {/* Author initials */}
                       <div className="absolute bottom-0 left-4 translate-y-1/2 transform">
