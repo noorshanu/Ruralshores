@@ -13,8 +13,9 @@ async function fetchPost(slug: string) {
   return arr?.[0]
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
-  const post = await fetchPost(params.slug)
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const post = await fetchPost(slug)
   if (!post) return <div className="container mx-auto px-4 py-20">Not found</div>
 
   const featured: string | undefined = post._embedded?.['wp:featuredmedia']?.[0]?.source_url
