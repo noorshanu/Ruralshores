@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import Image from 'next/image'
 
 const FaqList = () => {
   const [openIndex, setOpenIndex] = useState(0) // First item is open by default
@@ -52,66 +53,57 @@ const FaqList = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className={`rounded-lg border transition-all duration-300 ${
-                  openIndex === index
-                    ? 'bg-orange-50 border-orange-200'
-                    : 'bg-white border-gray-300 hover:border-gray-400'
-                }`}
-              >
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full px-6 py-4 text-left flex items-center gap-4 focus:outline-none"
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index
+              return (
+                <div
+                  key={index}
+                  className={`rounded-[50px] transition-all duration-400 ${
+                    isOpen
+                      ? 'p-[2px] bg-gradient-to-br from-[#e7d27c] to-[#f76c5e] shadow-[3px_2px_8px_#f76c5e61]'
+                      : 'p-px bg-black'
+                  }`}
                 >
-                  {/* Icon */}
-                  <div
-                    className={`w-6 h-6 rounded flex items-center justify-center flex-shrink-0 ${
-                      openIndex === index
-                        ? 'bg-orange-200'
-                        : 'bg-white border border-gray-300'
-                    }`}
-                  >
-                    <svg
-                      className={`w-3 h-3 transition-transform duration-300 ${
-                        openIndex === index
-                          ? 'text-orange-600 rotate-90'
-                          : 'text-gray-600'
-                      }`}
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
+                  <div className="rounded-[50px] bg-white overflow-hidden">
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="w-full px-6 py-4 text-left flex items-center gap-4 focus:outline-none"
                     >
-                      <path
-                        fillRule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                  {/* Icon using provided assets */}
+                  <div className="w-6 h-6 rounded flex items-center justify-center flex-shrink-0">
+                    <Image
+                      src={openIndex === index ? '/down.png' : '/green.png'}
+                      alt="toggle arrow"
+                      width={24}
+                      height={24}
+                      priority
+                    />
                   </div>
 
-                  {/* Question */}
-                  <span
-                    className={`font-semibold text-lg ${
-                      openIndex === index ? 'text-gray-800' : 'text-gray-700'
-                    }`}
-                  >
-                    {faq.question}
-                  </span>
-                </button>
+                    {/* Question */}
+                    <span
+                      className={`font-semibold text-lg ${
+                        isOpen ? 'text-gray-800' : 'text-gray-700'
+                      }`}
+                    >
+                      {faq.question}
+                    </span>
+                  </button>
 
-                {/* Answer */}
-                {openIndex === index && (
-                  <div className="px-6 pb-4">
-                    <div className="ml-10">
-                      <p className="text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
+                  {/* Answer */}
+                  {isOpen && (
+                    <div className="px-6 pb-4">
+                      <div className="ml-10">
+                        <p className="text-gray-600 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
                     </div>
+                  )}
                   </div>
-                )}
-              </div>
-            ))}
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
