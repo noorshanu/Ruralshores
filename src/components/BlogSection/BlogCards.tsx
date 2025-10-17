@@ -32,6 +32,19 @@ async function fetchPosts(page = 1, perPage = 6): Promise<{ posts: WpPost[]; tot
 export default async function BlogCards({ page = 1, perPage = 6 }: { page?: number; perPage?: number }) {
   const { posts, totalPages } = await fetchPosts(page, perPage)
   const stripHtml = (html: string) => html.replace(/<[^>]*>/g, '')
+  const decodeEntities = (text: string) =>
+    text
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&amp;/g, '&')
+      .replace(/&quot;|&#34;/g, '"')
+      .replace(/&apos;|&#39;|&#8217;/g, "'")
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&hellip;|&#8230;/g, '…')
+      .replace(/\[(?:&hellip;|&#8230;)\]/g, '…')
+      .replace(/\s+/g, ' ')
+      .trim()
+  const truncate = (text: string, max: number) => (text.length > max ? text.slice(0, max - 1).trimEnd() + '…' : text)
 
   return (
     <section className="py-16 ">
@@ -41,8 +54,10 @@ export default async function BlogCards({ page = 1, perPage = 6 }: { page?: numb
             {posts.map((post) => {
               const featured: string | undefined = post._embedded?.['wp:featuredmedia']?.[0]?.source_url
               const author: string | undefined = post._embedded?.author?.[0]?.name
+              const titleText = truncate(decodeEntities(stripHtml(post.title.rendered)), 90)
+              const descText = truncate(decodeEntities(stripHtml(post.excerpt.rendered)), 180)
               return (
-                <article key={post.id} className="relative overflow-hidden rounded-lg bg-white shadow-lg transition-shadow duration-300 hover:shadow-xl">
+                <article key={post.id} className="relative overflow-hidden rounded-[12px] bg-white border border-[#B8B8B8] shadow-[0_0_10px_0_rgba(0,0,0,0.15)] transition-shadow duration-300 hover:shadow-[0_0_14px_0_rgba(0,0,0,0.18)]">
                   {/* Blog Tag */}
                   <div className="relative">
                     <div className="absolute right-4 top-4 z-10">
@@ -51,7 +66,7 @@ export default async function BlogCards({ page = 1, perPage = 6 }: { page?: numb
 
                     {/* Featured Image */}
                     <div className="relative h-48 w-full bg-gray-200">
-                      <BlogImage src={featured} alt="Blog image" fill className="object-cover" />
+                      <BlogImage src={featured} alt={titleText || 'Blog image'} fill className="object-cover" />
 
                       {/* Author initials */}
                       <div className="absolute bottom-0 left-4 translate-y-1/2 transform">
@@ -69,13 +84,10 @@ export default async function BlogCards({ page = 1, perPage = 6 }: { page?: numb
 
                   {/* Content */}
                   <div className="p-6 pt-8">
-                    <h3
-                      className="mb-3 text-xl font-bold leading-tight text-gray-800"
-                      dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-                    />
-                    <p className="mb-4 line-clamp-4 text-sm text-gray-600">{stripHtml(post.excerpt.rendered)}</p>
+                    <h3 className="mb-3 line-clamp-2 text-xl font-bold leading-tight text-gray-800">{titleText}</h3>
+                    <p className="mb-4 line-clamp-4 text-sm text-gray-600">{descText}</p>
 
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between border-t border-gray-200 pt-4">
                       <Link
                         href={`/blog/${post.slug}`}
                         className="flex items-center gap-1 text-sm font-medium text-[#E75B4D] transition-colors hover:text-[#D54A3A]"

@@ -20,7 +20,7 @@ const Banner = () => {
         
 Blogs
           </h1>
-          <div className="w-24 h-2 bg-[#FFD700] mb-3"></div>
+          <div className="w-24 h-1 bg-[#FFD700] mb-3 mt-3"></div>
           
           <div className="space-y-2 text-lg md:text-3xl font-makozin text-gray-800 font-medium">
             <p>Stories. Skills. Success.</p>
