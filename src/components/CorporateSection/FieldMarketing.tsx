@@ -7,7 +7,7 @@ const FieldMarketing = () => {
   const [showHighlights, setShowHighlights] = useState(false)
 
   return (
-    <section className="relative py-16 lg:py-24 overflow-hidden">
+    <section className="relative py-16 lg:py-24 overflow-hidden" id="field-marketing-impact">
       {/* Decorative background */}
  
 

@@ -7,7 +7,7 @@ const ThirdParty = () => {
   const [showHighlights, setShowHighlights] = useState(false)
 
   return (
-    <section className="relative py-16 lg:py-24 overflow-hidden">
+    <section className="relative py-16 lg:py-24 overflow-hidden" id="third-party-talent-engine">
       <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 lg:grid-cols-2">
         {/* Text content - left side */}
         <div className="order-2 text-left lg:order-1">

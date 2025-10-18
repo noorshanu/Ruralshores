@@ -7,7 +7,7 @@ const FrontlineExcellence = () => {
   const [showHighlights, setShowHighlights] = useState(false)
 
   return (
-    <section className="relative py-16 lg:py-24 overflow-hidden">
+    <section className="relative py-16 lg:py-24 overflow-hidden" id="frontline-excellence-training">
       <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 lg:grid-cols-2">
         {/* Image - left side with soft frame */}
         <div className="relative order-1">

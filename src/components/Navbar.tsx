@@ -26,23 +26,23 @@ const menuItems: MenuItem[] = [
     dropdown: [
       {
         label: "Brand Assurance Audit",
-        href: "/services/brand-assurance-audit",
+        href: "/corporate#brand-assurance",
       },
       {
         label: "Field Marketing Impact",
-        href: "/services/field-marketing-impact",
+        href: "/corporate#field-marketing-impact",
       },
       {
         label: "Frontline Excellence Training",
-        href: "/services/frontline-excellence-training",
+        href: "/corporate#frontline-excellence-training",
       },
       {
         label: "Marketing as a Service",
-        href: "/services/marketing-as-a-service",
+        href: "/marketing-as-a-service",
       },
       {
         label: "Third Party Talent Engine",
-        href: "/services/third-party-talent-engine",
+        href: "/corporate#third-party-talent-engine",
       },
     ],
   },
