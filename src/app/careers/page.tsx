@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import Banner from "@/components/CareersSection/Banner";
 import CareerForm from "@/components/CareersSection/CareerForm";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Careers",
+  description:
+    "Join RuralShores Skills Academy and build a purpose-driven career while empowering rural India.",
+  alternates: { canonical: "/careers" },
+  openGraph: { url: "/careers", images: [{ url: "/career.png" }] },
+  keywords: ["careers", "jobs", "hiring", "RSA"],
+}
 
 const page = () => {
   return (

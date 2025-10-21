@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import React from 'react'
 import BlogImage from '@/components/BlogSection/BlogImage'
 
@@ -11,6 +12,37 @@ async function fetchPost(slug: string) {
   if (!res.ok) throw new Error(`HTTP ${res.status}`)
   const arr = await res.json()
   return arr?.[0]
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  try {
+    const post = await fetchPost(slug)
+    if (!post) return { title: 'Blog Post', description: 'Post not found' }
+    const title = post.title?.rendered?.replace(/<[^>]+>/g, '') || 'Blog Post'
+    const description = post.excerpt?.rendered?.replace(/<[^>]+>/g, '').slice(0, 160) || undefined
+    const featured: string | undefined = post._embedded?.['wp:featuredmedia']?.[0]?.source_url
+    return {
+      title,
+      description,
+      alternates: { canonical: `/blog/${slug}` },
+      openGraph: {
+        type: 'article',
+        url: `/blog/${slug}`,
+        title,
+        description,
+        images: featured ? [{ url: featured }] : undefined,
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
+        images: featured ? [featured] : undefined,
+      },
+    }
+  } catch {
+    return { title: 'Blog Post' }
+  }
 }
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {

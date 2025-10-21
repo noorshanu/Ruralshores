@@ -1,4 +1,5 @@
 'use client'
+import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
 import MarqueNew from "@/components/home/MarqueNew";
 import Services from "@/components/home/Services";
@@ -12,6 +13,20 @@ import Ctav2 from "@/components/home/Ctav2";
 import Vision from "@/components/Vision";
 import HomeTestimonials from "@/components/home/HomeTestimonials";
 
+export const metadata: Metadata = {
+  title: "Home",
+  description:
+    "RuralShores Skills Academy empowers youth and helps businesses scale with skilled rural talent.",
+  alternates: { canonical: "/" },
+  openGraph: { url: "/", images: [{ url: "/blogbanner.png" }] },
+  keywords: [
+    "RuralShores",
+    "skills academy",
+    "workforce",
+    "training",
+    "rural talent",
+  ],
+}
 
 export default function Home() {
   return (
