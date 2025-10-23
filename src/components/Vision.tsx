@@ -30,7 +30,7 @@ const Vision = () => {
               
               {/* Card */}
               <div className="bg-white rounded-2xl border border-black px-6 py-1 text-center shadow-sm hover:shadow-md transition-shadow duration-300 h-56 flex flex-col justify-center">
-                <h3 className="text-2xl font-alkes font-semibold text-gray-800 mb-6">
+                <h3 className="text-3xl font-alkes font-medium text-gray-800 mb-6">
                   Our Vision
                 </h3>
                 <p className="text-gray-600 font-alkes leading-relaxed text-lg">
@@ -61,7 +61,7 @@ const Vision = () => {
               
               {/* Card */}
               <div className="bg-white rounded-2xl border border-black px-6 py-1 text-center shadow-sm hover:shadow-md transition-shadow duration-300 h-56 flex flex-col justify-center">
-                <h3 className="text-2xl font-alkes font-semibold text-gray-800 mb-6">
+                <h3 className="text-3xl font-alkes font-medium text-gray-800 mb-6">
                   Our Mission
                 </h3>
                 <p className="text-gray-600 font-alkes leading-relaxed text-lg">
