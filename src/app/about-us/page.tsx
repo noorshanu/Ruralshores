@@ -6,6 +6,7 @@ import NeerajCeo from '@/components/Aboutus/NeerajCeo'
 import Roadmap from '@/components/Aboutus/Roadmap'
 import Vision from '@/components/Vision'
 import FaqRsa from '@/components/Aboutus/FaqRsa'
+import WhatWeDo from '@/components/Aboutus/WhatWeDo'
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -21,12 +22,14 @@ const page = () => {
     <div>
       <Banner />
       <AboutInfo />
+
       <NeerajCeo />
       <Roadmap />
       <div>
         <Vision/>
       </div>
       <FaqRsa />
+      <WhatWeDo />
       
     </div>
   )
