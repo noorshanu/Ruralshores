@@ -7,6 +7,7 @@ import Roadmap from '@/components/Aboutus/Roadmap'
 import Vision from '@/components/Vision'
 import FaqRsa from '@/components/Aboutus/FaqRsa'
 import WhatWeDo from '@/components/Aboutus/WhatWeDo'
+import RSACompetitive from '@/components/Aboutus/RSACompetitive'
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -29,6 +30,7 @@ const page = () => {
         <Vision/>
       </div>
       <FaqRsa />
+      <RSACompetitive />
       <WhatWeDo />
       
     </div>
