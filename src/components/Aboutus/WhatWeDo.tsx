@@ -3,6 +3,7 @@ import React from 'react'
 const WhatWeDo = () => {
   return (
     <section className="py-16 bg-white">
+      
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-alkes font-semibold text-black mb-8">
           What We Do

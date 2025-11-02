@@ -31,7 +31,7 @@ const NeerajCeo = () => {
               <p className="text-2xl text-[#E75B4D] font-makozin font-medium mb-2 flex items-center gap-2">
                CEO
                <span className="space-y-4 text-gray-700 leading-relaxed">
-                 <BsLinkedin className="text-lg -mt-1 text-black" />
+                 <BsLinkedin className="text-lg -mt-1 text-[#1c66c1]" />
                </span>
               </p>
               

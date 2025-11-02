@@ -1,6 +1,9 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
+import { BsDash } from "react-icons/bs";
+import { AnimatePresence, motion } from 'framer-motion'
+import { BsPlus } from 'react-icons/bs'
 
 const FaqRsa = () => {
   const [openIndex, setOpenIndex] = useState(0) // First item is open by default
@@ -48,7 +51,7 @@ const FaqRsa = () => {
   }
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 ">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl px-4 pb-10 mx-auto border rounded-[50px]">
           {/* Header with Icon and Title */}
@@ -69,27 +72,54 @@ const FaqRsa = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-lg border border-gray-200 transition-all duration-300 ${
+                className={`bg-white rounded-2xl border border-gray-200 transition-all duration-300 ${
                   openIndex === index
-                    ? 'shadow-md'
-                    : 'hover:shadow-sm'
+                    ? 'shadow-md ring-1 ring-[#f3b2aa]'
+                    : 'hover:shadow-sm hover:bg-gray-50'
                 }`}
               >
                 <button
                   onClick={() => toggleValue(index)}
-                  className="w-full px-6 py-4 text-left flex items-center gap-4 focus:outline-none"
+                  className="w-full px-6 py-5 text-left flex items-center gap-4 focus:outline-none"
                 >
                   {/* Icon */}
                   <div className="flex-shrink-0">
-                    {openIndex === index ? (
-                      <div className="w-8 h-8 bg-[#E75B4D] rounded-full flex items-center justify-center">
-                        <span className="text-white text-lg font-bold">-</span>
-                      </div>
-                    ) : (
-                      <div className="w-8 h-8 border-2 border-gray-300 rounded-full flex items-center justify-center">
-                        <span className="text-gray-600 text-lg font-bold">+</span>
-                      </div>
-                    )}
+                    <motion.div
+                      className="relative w-8 h-8"
+                      initial={false}
+                      whileTap={{ scale: 0.9 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 24 }}
+                    >
+                      <AnimatePresence mode="popLayout" initial={false}>
+                        {openIndex === index ? (
+                          <motion.span
+                            key="minus"
+                            initial={{ opacity: 0, rotate: -90, scale: 0.85 }}
+                            animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                            exit={{ opacity: 0, rotate: 90, scale: 0.85 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute inset-0 flex items-center justify-center"
+                          >
+                            <span className="text-[#E75B4D] text-2xl"><BsDash /></span>
+                          </motion.span>
+                        ) : (
+                          <motion.span
+                            key="plus"
+                            initial={{ opacity: 0, rotate: -90, scale: 0.85 }}
+                            animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                            exit={{ opacity: 0, rotate: 90, scale: 0.85 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute inset-0 flex items-center justify-center"
+                          >
+                            <span className="text-gray-600 text-xl"><BsPlus /></span>
+                          </motion.span>
+                        )}
+                      </AnimatePresence>
+
+                      {openIndex !== index && (
+                        <span className="absolute inset-0 rounded-full border-2 border-gray-300" />
+                      )}
+                    </motion.div>
                   </div>
 
                   {/* Title */}
@@ -103,19 +133,28 @@ const FaqRsa = () => {
                 </button>
 
                 {/* Content */}
-                {openIndex === index && (
-                  <div className="px-6 pb-4">
-                    <div className="ml-12">
-                      <ul className="space-y-2">
-                        {value.content.map((item, itemIndex) => (
-                          <li key={itemIndex} className="text-gray-700 leading-relaxed">
-                            • {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                )}
+                <AnimatePresence initial={false}>
+                  {openIndex === index && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: 'easeOut' }}
+                      className="px-6 pb-4"
+                    >
+                      <div className="ml-12 pl-6 border-l border-gray-200">
+                        <ul className="list-disc space-y-3">
+                          {value.content.map((item, itemIndex) => (
+                            <li key={itemIndex} className="text-gray-700 leading-relaxed">
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
           </div>

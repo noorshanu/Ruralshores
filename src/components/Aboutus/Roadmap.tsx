@@ -48,19 +48,27 @@ const Roadmap = () => {
             {/* Timeline Line */}
             <div className="absolute left-16 top-0 h-full w-0.5 bg-gray-800" />
             
-            {/* Moving Dot */}
-            <motion.div
+            {/* Moving Icon */}
+            <motion.svg
+              aria-hidden="true"
+              viewBox="0 0 512 512"
               style={{ y: dotY }}
-              className="absolute left-16 h-4 w-4 -translate-x-1/2 rounded-full bg-[#f66b5e] z-20"
-            />
+              className="absolute left-16 -translate-x-1/2 z-20 h-6 w-6 text-[#f66b5e]"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm80 248c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80z"
+                fill="currentColor"
+              />
+            </motion.svg>
             
             {/* Timeline Items */}
             <div className="space-y-20">
               {timelineData.map((item, index) => (
                 <div key={index} className="relative flex items-start">
                   {/* Year - Left side */}
-                  <div className="w-24 text-right pr-6">
-                    <div className="text-2xl font-bold text-gray-800">
+                  <div className="w-24 text-right ">
+                    <div className="text-2xl font-bold text-gray-800 mr-2">
                       {item.year}
                     </div>
                   </div>
@@ -69,12 +77,12 @@ const Roadmap = () => {
                   <div className="absolute left-16 h-4 w-4 -translate-x-1/2 rounded-full bg-[#f66b5e]" />
                   
                   {/* Event Card - Right side */}
-                  <div className="ml-12 flex-1">
-                    <div className="bg-gray-50 p-6 rounded-lg shadow-sm max-w-lg">
-                      <h3 className="text-xl font-bold text-gray-800 mb-3">
+                  <div className="ml-12 flex-1 w-full">
+                    <div className="bg-[#f6f3f2] p-6 rounded-xl  ">
+                      <h3 className="text-[43px] font-alkes font-bold text-black mb-3">
                         {item.title}
                       </h3>
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-black leading-relaxed text-base" >
                         {item.description}
                       </p>
                     </div>
