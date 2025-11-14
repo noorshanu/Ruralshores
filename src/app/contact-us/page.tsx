@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Banner from '@/components/ContactUs/Banner'
 import ContactForm from '@/components/ContactUs/ContactForm'
+import UpperText from '@/components/ContactUs/UpperText'
 import React from 'react'
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ const page = () => {
   return (
     <div>
       <Banner />
+      <UpperText />
       <ContactForm />
     </div>
   )

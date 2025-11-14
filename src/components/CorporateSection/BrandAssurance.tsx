@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 import React, { useState } from 'react'
 import Image from 'next/image'
@@ -7,7 +8,7 @@ const BrandAssurance = () => {
   const [showHighlights, setShowHighlights] = useState(false)
 
   return (
-    <section className="relative py-16 lg:py-24 overflow-hidden" id="brand-assurance-audit">
+    <section className="relative py-16 lg:pb-20 lg:pt-8 overflow-hidden bg-[#f7f3f2]" id="brand-assurance-audit">
       <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 lg:grid-cols-2">
         {/* Text content - left side */}
         <div className="order-2 text-left lg:order-1">
@@ -35,20 +36,17 @@ const BrandAssurance = () => {
         <div className="order-1 lg:order-2">
           <div className="relative mx-auto max-w-xl p-3">
             <div className="relative overflow-hidden rounded-xl">
+            <img src="/white-stroke.png" alt="Brush" width={900} height={600} className="h-auto w-full object-cover absolute top-0 left-0 z-[-2]" />
               <Image
                 src="/brandAss.png"
                 alt="Brand assurance audit in action"
                 width={900}
                 height={600}
-                className="h-auto w-full object-cover"
+                className="h-auto w-full object-cover z-10"
                 priority
               />
             </div>
 
-            {/* Corner icon badge */}
-            <div className="absolute -right-6 -top-6 rounded-2xl border-4 border-[#F5A79E] bg-white p-4 shadow-md">
-              <Image src="/file.svg" alt="audit icon" width={36} height={36} />
-            </div>
           </div>
         </div>
       </div>
