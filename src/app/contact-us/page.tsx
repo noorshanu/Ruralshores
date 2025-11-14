@@ -3,6 +3,7 @@ import Banner from '@/components/ContactUs/Banner'
 import ContactForm from '@/components/ContactUs/ContactForm'
 import UpperText from '@/components/ContactUs/UpperText'
 import React from 'react'
+import ContactDetails from '@/components/ContactUs/ContactDetails'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -18,6 +19,7 @@ const page = () => {
     <div>
       <Banner />
       <UpperText />
+      <ContactDetails />
       <ContactForm />
     </div>
   )
