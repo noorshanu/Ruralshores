@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 const ContactDetails = () => {
   return (
-    <div className='max-w-5xl mx-auto py-10'>
+    <div className='max-w-4xl mx-auto py-10'>
          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {/* Phone Card */}
             <div className="bg-white rounded-lg shadow-xl p-6 text-center border border-black">
