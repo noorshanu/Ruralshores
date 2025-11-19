@@ -2,10 +2,10 @@ import React from 'react'
 import Image from 'next/image'
 const ContactDetails = () => {
   return (
-    <div className='max-w-4xl mx-auto py-10'>
+    <div className='max-w-4xl mx-auto mt-4'>
          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {/* Phone Card */}
-            <div className="bg-white rounded-lg shadow-xl p-6 text-center border border-black">
+            <div className="bg-white rounded-lg shadow-xl p-6 text-center flex flex-col items-center justify-center border border-black">
               <div className="w-16 h-16 border border-[#F5C733] rounded-full flex items-center justify-center mx-auto mb-4">
            <Image src="/phone.png" alt="Phone" width={40} height={40} />
               </div>
@@ -18,7 +18,7 @@ const ContactDetails = () => {
               <div className="w-16 h-16 border border-[#F5C733] rounded-full flex items-center justify-center mx-auto mb-4">
            <Image src="/location.png" alt="Location" width={40} height={40} />
               </div>
-              <h3 className="text-xl font-bold font-alkes  mb-2">Location</h3>
+              <h3 className="text-xl font-bold font-alkes  ">Location</h3>
               <p className=" font-makozin text-base">
                 B-15, Ground Floor, Sector 2, Noida 201301, Uttar Pradesh, India
               </p>

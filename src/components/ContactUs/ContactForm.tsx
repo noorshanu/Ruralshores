@@ -24,7 +24,7 @@ const ContactForm = () => {
   }
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="pb-16 pt-40 bg-[#f7f3f2] container mx-auto rounded-t-[80px] -mt-40">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           {/* Contact Information Cards */}
@@ -50,7 +50,7 @@ const ContactForm = () => {
 
             {/* Right Column - Contact Form */}
             <div className="order-1 lg:order-2">
-              <div className="bg-white rounded-lg shadow-lg p-8">
+              <div className="">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name Field */}
                   <div>
@@ -64,7 +64,7 @@ const ContactForm = () => {
                       placeholder="Jhon Doe"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#E75B4D] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-full bg-white border border-black focus:border-[#E75B4D] focus:outline-none transition-colors"
                       required
                     />
                   </div>
@@ -81,7 +81,7 @@ const ContactForm = () => {
                       placeholder="abc@gmail.com"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#E75B4D] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-full bg-white border border-black focus:border-[#E75B4D] focus:outline-none transition-colors"
                       required
                     />
                   </div>
@@ -98,7 +98,7 @@ const ContactForm = () => {
                       placeholder="ex- I want to Know"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#E75B4D] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-full bg-white border border-black focus:border-[#E75B4D] focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -114,7 +114,7 @@ const ContactForm = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={5}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#E75B4D] focus:outline-none transition-colors resize-none"
+                      className="w-full px-4 py-3 rounded-lg bg-white border border-black focus:border-[#E75B4D] focus:outline-none transition-colors resize-none"
                       required
                     />
                   </div>
@@ -124,7 +124,7 @@ const ContactForm = () => {
                     <input
                       type="checkbox"
                       id="recaptcha"
-                      className="w-4 h-4 text-[#E75B4D] border-gray-300 rounded focus:ring-[#E75B4D]"
+                      className="w-4 h-4 text-[#E75B4D] border-black rounded focus:ring-[#E75B4D]"
                       required
                     />
                     <label htmlFor="recaptcha" className="text-sm text-gray-600">
@@ -144,7 +144,7 @@ const ContactForm = () => {
                   <div>
                     <button
                       type="submit"
-                      className="w-full bg-[#E75B4D] hover:bg-[#D54A3A] text-white font-bold py-4 px-6 rounded-lg transition-colors duration-300"
+                      className="w-full bg-[#E75B4D] hover:bg-[#D54A3A] text-white font-bold py-4 px-6 rounded-full transition-colors duration-300"
                     >
                       Submit
                     </button>
