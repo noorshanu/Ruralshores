@@ -36,10 +36,10 @@ const FieldMarketing = () => {
 
         {/* Text content */}
         <div className="text-left">
-          <h2 className="font-alkes text-4xl font-bold text-[#FF743E] sm:text-5xl">Field Marketing Impact</h2>
-          <div className="mt-2 mb-6 h-2 w-24 bg-[#FFD700]"></div>
+          <h2 className="font-alkes text-4xl font-medium text-[#FF743E] sm:text-4xl">Field Marketing Impact</h2>
+   
 
-          <div className="font-makozin space-y-4 text-lg leading-relaxed text-gray-700">
+          <div className="font-makozin space-y-4 text-lg leading-relaxed text-black mt-3">
             <p>
               Our <span className="font-semibold">Field Marketing Impact</span> program combines local trust with
               data-driven execution so every campaign delivers measurable outcomes.
@@ -59,20 +59,20 @@ const FieldMarketing = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ type: 'spring', stiffness: 180, damping: 22 }}
-                className="mt-4 space-y-4 text-lg leading-relaxed text-gray-700"
+                className="mt-4 space-y-4 text-lg leading-relaxed text-black"
               >
-                <p>
+                <p className="font-makozin text-[20px]">
                   Execution is monitored through geo-tagged reporting, surprise checks, and daily feedback loops,
                   supported by a maker-checker model that keeps performance transparent and reliable. Dashboards and
                   analytics provide brands with clear visibility into campaign reach, lead generation, and customer
                   response, while on-the-job coaching ensures continuous improvement.
                 </p>
-                <p>
+                <p className="font-makozin text-[20px]">
                   At RSA, we help brands win in rural and semi-urban markets by building field teams that do more than
                   promote. They influence, engage, and convert.
                 </p>
-                <h3 className="pt-2 font-alkes text-2xl font-bold text-gray-900">What We Offer</h3>
-                <ul className="list-disc space-y-2 pl-6 text-gray-800">
+                <h3 className="pt-2 font-alkes text-2xl font-semibold text-black">What We Offer</h3>
+                <ul className="list-disc space-y-2 pl-6 text-black font-makozin text-[20px]">
                   <li>Customized recruitment and training of field teams</li>
                   <li>In-store activations, rural events, and product demonstrations</li>
                   <li>Customer engagement and lead generation campaigns</li>
@@ -80,7 +80,7 @@ const FieldMarketing = () => {
                   <li>On-ground performance tracking with real-time dashboards</li>
                   <li>Independent audits and feedback loops for compliance and consistency</li>
                 </ul>
-                <p className="pt-2">
+                <p className="pt-2 font-makozin text-[20px]">
                   With RSA’s Field Marketing Impact, brands go beyond mass outreach to build meaningful, measurable, and
                   lasting connections in real-world markets, driving stronger equity, deeper trust, and sustained growth.
                 </p>
@@ -90,7 +90,7 @@ const FieldMarketing = () => {
           <button
             onClick={() => setShowMore((prev) => !prev)}
             aria-expanded={showMore}
-            className="mt-6 inline-flex items-center justify-center rounded-md px-6 py-3 font-semibold text-white shadow transition-opacity hover:opacity-90"
+            className="mt-6 inline-flex items-center justify-center rounded-md px-6 py-3 font-makozin text-base font-semibold text-white shadow transition-opacity hover:opacity-90"
             style={{ backgroundImage: 'linear-gradient(180deg, #F76C5E 0%, #DB99A0 100%)' }}
           >
             {showMore ? 'Read Less' : 'Read More'}
@@ -100,7 +100,7 @@ const FieldMarketing = () => {
 
       {/* CTA pill */}
       <div className="mt-14 px-4">
-        <div className="mx-auto max-w-5xl rounded-[15px] bg-[#F56D5F] px-6 py-4 text-center text-base font-semibold text-white shadow-md">
+        <div className="mx-auto max-w-5xl rounded-[15px] bg-[#F56D5F] px-6 py-4 text-center text-xl font-makozin font-semibold text-white shadow-md">
           Field Marketing Impact - Ready to expand your rural reach? Let’s design your campaign together.
         </div>
       </div>

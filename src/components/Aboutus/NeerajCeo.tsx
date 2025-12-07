@@ -49,7 +49,7 @@ const NeerajCeo = () => {
             The organization was founded under the leadership of Neeraj Agarwal, an IIT Delhi alumnus with two decades of experience at NIIT Ltd. Since then, RSA has transformed thousands of lives, expanding from just 4 centers in 3 states to a pan-India presence, working across sectors, industries, and communities. 
             </p>
         </div>
-      <div className="text-center bg-[#f5f5f5] py-10" >
+      <div className="text-center bg-[#f5f5f5] py-10 my-4" >
             <h2 className="text-4xl font-medium text-black font-alkes">
             A Decade of Impact
             </h2>

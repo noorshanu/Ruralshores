@@ -18,10 +18,10 @@ const Banner = () => {
       
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ">
+      <div className="relative z-10 container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ">
         {/* Left Section - Text Content */}
         <div className="text-left">
-          <h1 className="text-4xl sm:text-6xl font-bold text-[#FF743E] mb-1 font-alkes">
+          <h1 className="text-4xl sm:text-6xl font-bold text-[#E75B4D] mb-1 font-alkes">
           Corporate
           </h1>
           <div className="w-24 h-2 bg-[#FFD700] mb-3"></div>
@@ -29,7 +29,6 @@ const Banner = () => {
           <div className="space-y-2 text-lg md:text-3xl font-makozin text-gray-800 font-medium">
             <p>We Train. We Audit.</p>
             <p>We Activate. You Grow.</p>
-          
           </div>
         </div>
 
