@@ -111,7 +111,7 @@ const FieldMarketing = () => {
           whileTap={{ scale: 0.98 }}
           onClick={() => setShowHighlights((prev) => !prev)}
           aria-expanded={showHighlights}
-          className="inline-flex cursor-pointer items-center rounded-lg bg-gradient-to-b  from-[#F76C5E] to-[#fdeceb] p-6  backdrop-blur-sm px-6 py-3  text-[#000000] shadow"
+          className="inline-flex cursor-pointer items-center rounded-lg bg-gradient-to-b  from-[#F76C5E] to-[#fdeceb] p-6  backdrop-blur-sm px-6 py-3  text-[#000000] shadow font-makozin"
         >
           Key Highlights :
         </motion.button>
@@ -129,7 +129,7 @@ const FieldMarketing = () => {
             className="mx-4 mt-6 rounded-xl border border-[#f3b2aa]  bg-gradient-to-b   from-[#fdeceb] to-[#F76C5E] p-6 shadow-md backdrop-blur-sm lg:mx-auto lg:max-w-5xl text-black"
           >
             <div className="text-left">
-              <h3 className="mb-4 font-alkes text-xl font-bold text-gray-800">Key Highlights:</h3>
+              <h3 className="mb-4 font-makozin text-xl font-bold text-gray-800">Key Highlights:</h3>
               <ul className="space-y-4 pl-5 text-gray-800">
                 <li className="list-disc">Customized field force recruitment and training</li>
                 <li className="list-disc">In-store and rural activation campaigns</li>
